@@ -49,6 +49,30 @@ knitr::opts_chunk$set(fig.retina = 3,
 
 ---
 
+## Political Microtargeting
+
+
+> Personalizing political campaign messages based on large-scale data collection
+
+--
+
+Most commonly known examples: 
+
++ Cambridge Analytics
++ Russian based troll farm: IRA
+
+.pull-left[
+![](https://cdn2.opendemocracy.net/media/images/PA-35629884-min.max-760x504.jpg)
+
+]
+
+.pull-right[
+![](https://d.newsweek.com/en/full/922055/00-russian-ads.jpg?w=737&f=e58952a32494348076bd174f93ea79ca)
+
+]
+
+---
+
 
 
 class: center, middle
