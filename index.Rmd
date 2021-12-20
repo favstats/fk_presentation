@@ -667,7 +667,7 @@ class: center, middle
 
 <br>
   
-+ Experimental design that varies targeting criteria (and content)
++ Experimental design that varies targeting criteria
 
 + Estimated timeframe for placing ads: ~ Late January to mid-February 2022
 
@@ -689,7 +689,7 @@ class: center, middle
 
       Observing differences of pricing and delivery:
 
-  1. *within a party* (i.e. different targeting criteria and content)
+  1. *within a party* (i.e. different targeting criteria)
 
   2. *between parties*
   
@@ -952,6 +952,38 @@ class: white
 
 ## Skewed delivery in terms of gender
 
+### Measurement for skew in delivery
+
+*Example*
+
+ad delivers to 50% women 
+
+-> it would be wrong to think there is no skew 
+
+--
+
+because:
+
++ 60% of audience are women (last 30 days active)
+
+--
+
+so the skew is:
+
++ skew = gender share in delivery - gender share in audience
+
+> 50-60 = -10%
+
+Ad delivered to 10% less women than if we would assume no skew
+
+---
+
+class: white
+
+## Skewed delivery in terms of gender
+
++ skew = gender share in delivery - gender share in audience (last 30 days active)
+
 <img src="img/gendershare" width="60%" height="60%">
 
 ---
@@ -959,6 +991,8 @@ class: white
 class: white
 
 ## Less clear for age groups
+
++ skew = age share in delivery - age share in audience
 
 <img src="img/age_share.png" width="60%" height="60%">
 
