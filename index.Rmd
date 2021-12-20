@@ -16,7 +16,6 @@ output:
       ratio: "16:9"
 ---
 
-
 layout: true
     
 <div class="logo"></div> 
