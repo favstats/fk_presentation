@@ -1,8 +1,8 @@
 ---
-title: "Who targets you and how?"
-subtitle: "Investigating political microtargeting from a platform and advertiser perspective"
-author: "Fabio Votta"
-date: "20.12.2021"
+title: "Black Box Targeting"
+subtitle: "Exploring the Influence of the Facebook Ad Delivery Algorithm in the Dutch Context"
+author: "Fabio Votta, Tom Dobber, Claes de Vreese, Natali Helberger"
+date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
     css: [ascor.css, default]
@@ -28,531 +28,116 @@ layout: true
 knitr::opts_chunk$set(fig.retina = 3, 
                       warning = FALSE, 
                       message = FALSE,
-                      echo = TRUE)
+                      echo = F)
+
+
+library(tidyverse)
+
+source("../algo_ads/helpers.R")
 
 # dir("../img", recursive = T, full.names = T) %>%
 #   walk(~{file.copy(.x, str_remove(.x, "\\.\\.\\/"))})
 ```
 
----
-
-## Overview
-
-
-
-**1. Examining microtargeting in the German election**
-
-<br>
-
-**2. Studying the blackbox of the Facebook algorithm**
 
 ---
 
-## Political Microtargeting
-
-
-> Personalizing political campaign messages based on large-scale data collection
+### The "bad actor"-story of political microtargeting
 
 --
-
-Most commonly known examples: 
-
-+ Cambridge Analytics
-+ Russian based troll farm: IRA
-
-.pull-left[
-![](https://cdn2.opendemocracy.net/media/images/PA-35629884-min.max-760x504.jpg)
-
-]
-
-.pull-right[
-![](https://d.newsweek.com/en/full/922055/00-russian-ads.jpg?w=737&f=e58952a32494348076bd174f93ea79ca)
-
-]
-
----
-
-
-
-class: center, middle
-
-## Targeting during German Bundestag elections
-
-### Collaboration with Who Targets Me
-
----
-
-class: white
-
-## Who Targets Me
-
-.pull-left[
-![](https://whotargets.me/wp-content/uploads/2020/06/wtm_logo_2020.png)
-
-]
-
-.pull-right[
-![](https://whotargets.me/wp-content/uploads/2021/04/Screenshot-2021-04-30-at-09.49.54.png)
-]
-
----
-
-class: white
-
-### Who Targets Me
-
-
-.pull-left[
-
-+ ZDF Magazin Royale collaborates with Who Targets Me (April 2021)
-
-+ 17k users in Germany sign up with WTM in the next months
-
-+ only ~5k users (~30%) see ads
-
-+ 150k political ad impressions
-
-+ I join the project end of July 2021
-
-]
-
-.pull-right[
-
-<img src="img/zdf_tweet.png" width="70%" height="70%">
-
-]
-
-
-
-
----
-
-class: white
-
-### ZDF Magazine Royale Show 24. September 2021
-
-
-<img src="https://i3.ytimg.com/vi/8vq6MzGNZyM/maxresdefault.jpg" width="70%" height="70%">
-
-
-http://y2u.be/8vq6MzGNZyM
-
----
-
-
-
-class: white
-
-## Political Advertisers in Germany
-
-![](img/ad_impressions.png)
-
----
-
-
-class: white
-
-## Political Advertisers in Germany
-
-
-<img src="img/advertiser_names_1.png" width="70%" height="70%">
-
-
----
-
-
-class: white
-
-## Political Advertisers in Germany
-
-![](img/advertiser_names_2.png)
-
----
-
-class: white
-
-## Bias in data - Gender
-
-![](img/gender_bias.png)
-
-
----
-
-class: white
-
-## Bias in data - Age
-
-
-![](img/age_bias.png)
-
----
-
-class: white
-
-## Bias in data - Bundesland
-
-![](img/region_bias.png)
-
-
----
-
-class: white
-
-### Weighting the data 
-
-#### according to German population metrics
-
-<img src="img/gender_weighted.png" width="50%" height="50%">
-
-
----
-
-class: white
-
-## Why Am I Seeing This
-
-+  WTM users share the text from the ‘Why am I seeing this?’ label
-
-![](https://www.impactplus.com/hubfs/Screen%20Shot%202019-07-15%20at%202.11.21%20PM.png)
-
-
----
-
-class: white
-
-### Which targeting criteria did German parties use?
-
-<img src="img/targeting_criteria.png" width="40%" height="40%">
-
----
-
-class: white
-
-### How common is targeting anyway?
-
-<img src="https://pbs.twimg.com/media/FAI_L3TXMAA192x?format=png&name=4096x4096" width="80%" height="80%">
-
-
----
-
-class: white
-
-### Which targeting criteria did German parties use?
-
-+ Parties often target interest in their own party
-
-+ Parties often use location targeting
-
-+ Parties make frequent use of custom and lookalike audiences
-
-Link to Shiny app to explore results:
-
-[favstats.shinyapps.io/btw21_wtm/](https://favstats.shinyapps.io/btw21_wtm/)
-
----
-
-class: white
-
-### Targeting - CDU/CSU
-
-![](img/cdu_targeting.png)
-
----
-
-class: white
-
-### Targeting - SPD
-
-![](img/spd_targeting.png)
-
-
----
-
-
-class: white
-
-### Targeting - Die Grünen
-
-![](img/green_targeting.png)
-
-
----
-
-class: white
-
-### Targeting - AfD
-
-![](img/afd_targeting.png)
-
-
----
-
-class: white
-
-### Targeting - LINKE
-
-![](img/left_targeting.png)
-
----
-
-class: white
-
-### Targeting - FDP
-
-![](img/fdp_targeting.png)
-
----
-
-class: white
-
-### Targeting Networks - CDU
-
-![](img/targeting_network_cdu.png)
-
----
-
-class: white
-
-### Targeting vaccine skeptic content
-
-.pull-left[
-
-<img src="https://whotargets.me/wp-content/uploads/2021/08/dieterdehm.png" width="100%" height="100%">
-
-]
-
-.pull-right[
-<img src="https://whotargets.me/wp-content/uploads/2021/08/dieterdehmad.png" width="70%" height="70%">
-]
-
----
-
-class: white
-
-### Targeting vaccine skeptic content
-
-.pull-left[
-
-<img src="https://whotargets.me/wp-content/uploads/2021/08/dieterdehm.png" width="100%" height="100%">
-
-]
-
-
-.pull-right[
-> Ich selbst bin weder ein fanatischer Impfgegner noch -Befürworter: Weil die Haupterfolge gegen dieses Virus sowieso in unseren Immunsystemen stattfinden, wenn sie – von Stress und Umweltschäden verschont – Keime abwehren und ein unauffälliges Infektionsgeschehen bewirken.
-]
-
-
----
-
-class: white
-
-## Attack Ads - CDU
-
-.pull-left[
-This CDU ad is targeted at 
-
-+ small business owners
-+ interest in business management
-+ female entrepreneurs
-+ start-ups
-+ “The Economist” 
-+ entrepreneurship
-]
-
-.pull-right[
-
-<img src="https://whotargets.me/wp-content/uploads/2021/09/cdu.png" width="50%" height="50%">
-
-
-]
-
-
----
-
-class: white
-
-## Targeting opponents - GRÜNEN
-
-Ads targeted at older people (30-65+), interest in SPD, and also various environmentalist interests (ecology, sustainability, etc.)
-
-
-<img src="https://whotargets.me/wp-content/uploads/2021/09/image-2.png" width="70%" height="70%">
-
-
-
----
-
-## What work remains to be done?
-
-+ A lot
-
---
-
-+ Everything in regards to content of the ads
-
-+ Issue Ownership 
-
-+ How are negative ads targeted? 
-
-+ To which degree are ads personalized? 
-
-+ How common is “two-facedness”, promising different things to different voters? 
-
----
-
-class: center, middle
-
-## Automated Microtargeting
-
-### Exploring the Influence of the Facebook Ad Delivery Algorithm in the Dutch Context
-
----
-
-## Ad Delivery Algorithms
-
 
 + Discourse on political microtargeting is often focused on the "bad actor" story
 
-  + Russian election interference campaign (IRA)
+  + Russian election interference campaign (Internet Research Agency)
   
-  + Cambridge Analytica
+  + Cambridge Analytica scandal
   
-  + Trump campaign (Steve Bannon, Brad Parscale)
+  + Target specific groups with the intention to manipulate/dissuade from voting
+
+--
+
+
++ The implicit assumption:
+  
+    + advertisers have strong control over who sees which ad 
 
 --
 
 <br>
 
-+ The explicit assumption here is that the advertisers have strong control over who sees which ad
+**But who ultimately decides to whom an ad is delivered to?**
+
+> The ad delivery algorithm
+
+---
+
+class: 
+
+### Ad delivery algorithms
+
+Meta says:
+
+> *The Facebook ad delivery system uses an **ad auction** and **machine learning** to determine where, when and to whom we show your ads. These processes work together to maximize value for both people and businesses.*
 
 --
 
-<br>
++ Ad auctions
 
-There is a distinct lack of research on the *automated* aspect of political microtargeting: 
+  + Each time there's an opportunity to show an ad to someone, an auction takes place to determine which ad to show to that person. 
 
-the **ad delivery algorithm**
+--
+  
+&#8594; **More about that later**
+  
+--
+
+
++ Machine learning
+
+  + Models trained on internal platform data to deliver ads to the  *"right"* audience
 
 ---
 
 
-class: center, middle
 
-## Poltical Microtargeting since 2016
+### Prior Research into Ad Delivery Algorithms
+
+**Job ads and Housing**
+
+* Discrimination in Online Ad Delivery [(Sweeney, 2013)](https://doi.org/10.1145/2460276.2460278) 
+
+* Algorithmic bias? An empirical study of apparent gender-based discrimination in the display of stem career ads [(Lambrecht and Tucker, 2019)](https://doi.org/10.1287/mnsc.2018.3093) 
+
+* Auditing Race and Gender Discrimination in Online Housing Market [(Asplund et al., 2020)](https://ojs.aaai.org/index.php/ICWSM/article/view/7276) 
+
+* Auditing for Discrimination in Algorithms Delivering Job Ads [(Imana et al., 2021)](https://ant.isi.edu/datasets/addelivery/Discrimination-Job-Ad-Delivery.pdf) 
 
 --
 
-Ad libraries and **limitations to targeting**
+**More general and political ads**
 
+* Discrimination through Optimization: How Facebook’s Ad Delivery Can Lead to Biased Outcomes
+ [(Ali et al. 2020)](https://dl.acm.org/doi/10.1145/3359301)
 
-
+* Ad Delivery Algorithms: The Hidden Arbiters of Political Messaging [(Ali et al., 2021)](https://dl.acm.org/doi/pdf/10.1145/3437963.3441801) 
 
 ---
 
-### Poltical Microtargeting since 2016
+class: white
 
-**Google** now only allows targeting by age, gender and location for political ads.
+### Prior Research (Ali et al., 2020,2021)
 
-**Facebook** also limited ad targeting options 
-  + disallowing targeting based on race, religion and more
-  
---
-  
 .pull-left[
-```{r, out.width="160%", echo = F}
-knitr::include_graphics("img/remove_targeting.png")
-```
+![](img/ali1.png)
 ]
+
+
 
 .pull-right[
-<br>
-<br>
-<br>
-[facebook.com/business/news/removing-certain-ad-targeting-options-and-expanding-our-ad-controls](https://www.facebook.com/business/news/removing-certain-ad-targeting-options-and-expanding-our-ad-controls)
+<img src="img/ali2.png" width="90%">
 ]
 
 
-
-
----
-
-
-### Poltical Microtargeting since 2016
-
-**Google** now only allows targeting by age, gender and location for political ads.
-
-**Facebook** also limited ad targeting options 
-  + disallowing targeting based on race, religion and more
-  
-<br>
-
-Facebook still allows targeting based on:
-  + detailed demographics 
-  + users' declared interests 
-  + Behavioural targeting 
-  + Custom and Lookalike Audiences
-
-
----
-
-
-class: center, middle
-
-# Ad Objectives,<br>Optimizations<br>and Relevancy
-
----
-
-### Ad Objectives, Optimizations and Relevancy
-
-There is more than just targeting criteria that decides who sees political ads:
-
-+ **Ad objective** = what is the goal of the ad?
-
-    for example: generate web traffic, like Facebook page, buy products
-    
---
-
-+ **Optimization** = how should the goal be achieved?
-
-    key metric to be optimized on: number of exposed users, clicks, conversions
-    
---
-
-+ **Relevancy** = how relevant is the ad to the user
-
-```{r, out.width="70%", echo = F}
-knitr::include_graphics("img/relevant_quote.png")
-```
-
---
-
-→ ***Implies big role of the ad delivery algorithm***
-
-
-
----
-
-class: center, middle
-
-## Prior investigations into the<br>role of the ad delivery algorithm
-
----
-
-### Pricing differences in the US 2020 election
-
-+ Biden campaign paid more than **6x more** 
-  + compared to Trump campaign when targeting older voters. [(The Markup 2020)](https://themarkup.org/election-2020/2020/10/29/facebook-political-ad-targeting-algorithm-prices-trump-biden)
-  
-  
-<center>
-```{r, out.width="60%", echo = F}
-knitr::include_graphics("img/older.png")
-```
-</center>
-  
-<!-- ![](img/older.png) -->
-  
 
 ---
 
@@ -563,39 +148,102 @@ When targeting the same audience, at the same time, with the same budget:
 
 + Ad delivery is heavily skewed along gendered and racial stereotypes
   + even without the intent of the advertiser [(Ali et al. 2020)](https://dl.acm.org/doi/10.1145/3359301)
-
+  
 --
+
+.pull-left[
+**Delivery remains skewed even with blank image**
+
+Images invisible to humans but still detectable by algorithm:
+
++ yield **similar skews** in delivery
+
++ highlights importance of algorithm
+
++ less based on differences in user behavior/preferences
+]
+
+.pull-right[
+![](img/ali3.png)
+]
+
+
+
+---
+
+
+
+### Prior Research (Ali et al., 2020,2021)
+
+
+When targeting the same audience, at the same time, with the same budget:
 
 Regarding political ads [(Ali et al., 2021)](https://dl.acm.org/doi/pdf/10.1145/3437963.3441801):
 
 --
 
+.pull-left[
 + **Skewed delivery**
 
   + Political ads more often delivered to ideologically congruent audience 
       + Bernie ads → higher % D; 
       + Trump ads → higher % R
 
---
-
 + **Increased cost**
 
   + Liberal ad to a liberal audience: *21 Dollar per 1000 users*; 
   + Conservative ad delivered to liberal audience: *40 Dollar per 1000 users*.
+]
+
+--
+
+.pull-right[
+**Results hold** 
+
++ when tricking Facebook into classifying non-partisan ads as partisan
+
+<img src="img/ali4.png" width="40%">
+
+]
 
 
 
 ---
 
 
-class: white
 
-<img src="img/costper1k.png">
+### How are ad costs determined?
+
+**Ad auctions**
+
+--
+
+Each time there is a possibility to show an ad, an ad auction takes place.
+
+--
+
+The winner of the auction is determined by *bids* and *ad relevance*:
+
+--
+
++ *Bid:* 
+
+  + what the advertiser is willing to pay 
+
+--
+
++ *Ad relevance:* 
+
+  + predicated probability that delivery leads to desired outcome (e.g. clicks, views)
+  
+      + when audiences find ads "engaging, interesting or eye-catching"
+
+  + conforming to FB quality standards (e.g. no clickbait)
 
 
 ---
 
-### Why study black box of the Facebook algorithm
+### Political Microtargeting and Ad Delivery Algorithms
 
 
 + Severely limiting or banning microtargeting is *inadequate*
@@ -614,32 +262,15 @@ It would:
 
 ---
 
-### Why study black box of the Facebook algorithm
 
 
-+ Facebook may (dis-)advantage certain parties
+class: white
 
-  + Equal-time rule?
-
---
-
-+ Parties may pay more money to persuade potential voters
-
-  + It might be more costly to reach people who are undecided
-
---
-
-+ Political campaigns may not reach their intended audiences 
-
-  + only the people that *already agree with the message*
-  
-  + certain groups might be excluded entirely
-  
-  + potentially exasperates the fragmentation of the political landscape
-
+<img src="img/costper1k.png">
 
 
 ---
+
 
 class: center, middle
 
@@ -661,70 +292,26 @@ class: center, middle
 
 + We reached out to 7 major political parties
 
-  + heard back from 3, all of which gave us a tentative ***yes***
+  + final collaboration with 3: GroenLinks, VVD and PvdA
   
 --
 
 <br>
   
-+ Experimental design that varies targeting criteria
++ Experimental design that varies targeting criteria (and parties)
 
-+ Estimated timeframe for placing ads: ~ Late January to mid-February 2022
++ Place ads from 1st to 8th Feburary 2022
 
-  + close to Netherlands-wide local elections in March 2022
+  + close but not too close to Netherlands-wide local elections in March 16th 2022
 
 --
   
 <br>
   
-+ Plan is to pre-register
++ Pre-registered research design and hypotheses
 
 ---
 
-
-
-### Research Design
-
-+ The study design will incorporate two *levels of comparisons*
-
-      Observing differences of pricing and delivery:
-
-  1. *within a party* (i.e. different targeting criteria)
-
-  2. *between parties*
-  
-
-
-
----
-
-### Research Design
-
-Facebook says it delivers ads based on a "relevancy" score
-
-→ Facebook optimizes for ***perceived*** *congruency* between the content/message of the ad and the person seeing the ad
-
-We hypothesize some audiences might therefore be *harder to reach*
-  + as in: more expensive
-  + reach less people given the same conditions (budget and timing)
-  
-
-  
---
-
-In order to test the algorithm we need to:
-
-+ Place ads with ad goal: *Reach*
-+ Ad optimization: *Unique users reached*
-
---
-
-Optimizing on Reach (rather than Traffic): 
-   
-+ the algorithm has to work more on its internal assumptions 
-+ doesn't use user cues (i.e. clicks) as much to decide who is going to see the ad
-
----
 
 
 ### Dependent Variables
@@ -749,141 +336,1087 @@ Optimizing on Reach (rather than Traffic):
 ---
 
 
-class: center, middle
+### Dependent Variables
 
-# "Election date reminder" ads and proposed conditions
+The study design incorporates two *levels of comparisons*
+
+Observing differences of pricing and delivery:
+
+  1. *within a party* (i.e. different targeting criteria)
+
+  2. *between parties*
+  
+---
+
+
+### Independent Variable: Ad Relevance
+
+We theorize two different but possibly overlapping levels of (predicted) relevance:
+
+--
+
+1. *Relevant audience for ad content (i.e. political message)*
+
+--
+
+  + Political message likely to be relevant for people interested in politics
+
+--
+
+2. *Relevant audience for party (i.e. source of ad)*
+
+--
+
+  + Ads from an environmentalist party more likely to be relevant for audience interested in environmentalism.
+
+--
+
+**Hypotheses:**
+
+> H1: The more relevant an audience is for an ad, the cheaper is the cost for reaching 1000 users in that audience.
+
+> H2: The more relevant an audience is for an ad, the more are ads delivered to that audience.
+
+
+
+---
+
+
+### Targeting criteria
+
+We used 9 different targeting criteria for our advertisements
+
+.pull-left[
+
+1. Political interests
+2. Excluding political interest
+
+
+]
+
+.pull-right[
+
+**Relevant audience for ad content**
+
+> Targeting political ads to audiences who are interested in politics 
+
+> + H1a) *is less expensive* 
+
+> + H2a) *deliver more* 
+
+> than targeting audiences who are not interested in politics. 
+
+
+]
+
+
+---
+
+### Targeting criteria
+
+
+We used 9 different targeting criteria for our advertisements
+
+.pull-left[
+
+1. Political interests
+2. Excluding political interest
+  
+
+<ol start="3">
+  <li>Higher educated audience</li>
+  <li>Lower educated audience</li>
+</ol>
+
+
+]
+
+.pull-right[
+
+**Relevant audience for ad content**
+
+> Targeting political ads to higher-educated audiences
+
+> + H1b) *is less expensive* 
+
+> + H2b) *deliver more* 
+
+> than targeting lower-educated audiences. 
+
+
+]
+
+
+---
+
+### Targeting criteria
+
+
+We used 9 different targeting criteria for our advertisements
+
+.pull-left[
+
+1. Political interests
+2. Excluding political interest
+
+<ol start="3">
+  <li>Higher educated audience</li>
+  <li>Lower educated audience</li>
+</ol>
+
+
+]
+
+.pull-right[
+
+
+**Relevant audience for party**
+
+
+> Targeting political ads to higher-educated audiences
+
+> + H1c) *is less expensive* 
+
+> + H2c) *deliver more* 
+
+for GroenLinks compared to the PvdA and VVD. 
+
+]
+
+
+---
+
+### Targeting criteria
+
+
+We used 9 different targeting criteria for our advertisements
+
+.pull-left[
+
+1. Political interests
+2. Excluding political interest
+  
+  
+<ol start="3">
+  <li>Higher educated audience</li>
+  <li>Lower educated audience</li>
+</ol>
+
+<ol start="5">
+  <li>Environmental interests</li>
+  <li>Excluding environmental interests</li>
+</ol>
+
+  
+
+]
+
+.pull-right[
+
+
+**Relevant audience for party**
+
+
+> Targeting political ads to audiences interested in environenmentalism
+
+> + H1d) *is less expensive* 
+
+> + H2d) *deliver more* 
+
+for GroenLinks compared to the PvdA and VVD. 
+
+]
+
+
+---
+
+
+### Targeting criteria
+
+
+We used 9 different targeting criteria for our advertisements
+
+.pull-left[
+
+1. Political interests
+2. Excluding political interest
+  
+<ol start="3">
+  <li>Higher educated audience</li>
+  <li>Lower educated audience</li>
+</ol>
+
+<ol start="5">
+  <li>Environmental interests</li>
+  <li>Excluding environmental interests</li>
+</ol>
+
+<ol start="7">
+  <li>Economic interests</li>
+  <li>Excluding Economic interests</li>
+</ol>
+
+]
+
+.pull-right[
+
+
+**Relevant audience for party**
+
+
+> Targeting political ads to audiences interested in the economy
+
+> + H1e) *is less expensive* 
+
+> + H2e) *deliver more* 
+
+for VVD compared to the PvdA and GroenLinks. 
+
+]
+
+
+---
+
+
+### Targeting criteria
+
+
+We used 9 different targeting criteria for our advertisements
+
+.pull-left[
+
+1. Political interests
+2. Excluding political interest
+
+<ol start="3">
+  <li>Higher educated audience</li>
+  <li>Lower educated audience</li>
+</ol>
+
+<ol start="5">
+  <li>Environmental interests</li>
+  <li>Excluding environmental interests</li>
+</ol>
+
+<ol start="7">
+  <li>Economic interests</li>
+  <li>Excluding Economic interests</li>
+</ol>
+  
+<ol start="9">
+  <li>No Targeting</li>
+</ol>
+
+]
+
+.pull-right[
+
+We expect that the Meta ad delivery algorithm has an easier time finding a relevant audience for parties that have more support in the public.
+
+
+> H3a: Parties with a greater share of supporters pay less for reaching 1000 users.
+
+> H3b: Parties with a greater share of supporters reach more people than smaller parties.
+
+]
+
+---
+
+class: white
+
+### Targeting Criteria and Relevance Coding
+
+
+<img src="img/relevance_coding.png" width="90%">
 
 
 ---
 
 class: white
 
-### "Election date reminder" ads and proposed conditions
+### Design Overview
+
++ We determined the minimum number of ads we need per condition and that is *5* 
+
+   + 9 conditions * 5 ads = 45 ads per party (135 in total)
+
+<center>
+<img src="img/condtions_osf.png" width="70%" height="70%">
+</center>
+
+
+
+---
+
+
+
+### Research design
 
 .pull-left[
-
-<img src="img/laatjestem.png" width="70%" height="70%">
-
-Note: this is only an example to showcase the idea. Not the final design.
-
+<style type="text/css">
+.tg  {border-collapse:collapse;border-color:#ccc;border-spacing:0;}
+.tg td{background-color:#fff;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#f0f0f0;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-5otb{border-color:inherit;color:#656565;text-align:left;vertical-align:top}
+.tg .tg-kdu2{background-color:#b4a7d5;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-ckur{background-color:#ffffff;border-color:inherit;color:#32cb00;text-align:left;vertical-align:top}
+.tg .tg-fbme{background-color:#ffffff;border-color:inherit;color:#036400;text-align:left;vertical-align:top}
+.tg .tg-7vhs{background-color:#dbd3e7;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-r3xs{background-color:#b6d7a9;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-ugdo{background-color:#ffffff;border-color:inherit;color:#fe0000;text-align:left;vertical-align:top}
+.tg .tg-ko5t{background-color:#d8ead2;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-ry9a{background-color:#ffffff;border-color:inherit;color:#656565;text-align:left;vertical-align:top}
+.tg .tg-c6of{background-color:#ffffff;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-pvqo{background-color:#fe9900;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-sdck{background-color:#f9cc9a;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-9d5r{background-color:#a5c1f4;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-lfef{background-color:#cbdafb;border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0pky">Targeting</th>
+    <th class="tg-0pky">GroenLinks</th>
+    <th class="tg-0pky">PvdA</th>
+    <th class="tg-0pky">VVD</th>
+    <th class="tg-0pky"></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">1. No Targeting</td>
+    <td class="tg-5otb">o</td>
+    <td class="tg-5otb">o</td>
+    <td class="tg-5otb">o</td>
+    <td class="tg-0pky"></td>
+  </tr>
+  <tr>
+    <td class="tg-r3xs">2. Environmental interests</td>
+    <td class="tg-fbme">+</td>
+    <td class="tg-ugdo">-</td>
+    <td class="tg-ugdo">-</td>
+    <td class="tg-r3xs"></td>
+  </tr>
+  <tr>
+    <td class="tg-ko5t">3. Excluding environmental interests</td>
+    <td class="tg-ugdo">-</td>
+    <td class="tg-ry9a">o</td>
+    <td class="tg-ry9a">o</td>
+    <td class="tg-ko5t"></td>
+  </tr>
+  <tr>
+    <td class="tg-kdu2">4. Economic interests</td>
+    <td class="tg-c6of">-</td>
+    <td class="tg-c6of">-</td>
+    <td class="tg-c6of">+</td>
+    <td class="tg-kdu2"></td>
+  </tr>
+  <tr>
+    <td class="tg-7vhs">5. Excluding Economic interests</td>
+    <td class="tg-c6of">o</td>
+    <td class="tg-c6of">o</td>
+    <td class="tg-c6of">-</td>
+    <td class="tg-7vhs"></td>
+  </tr>
+  <tr>
+    <td class="tg-pvqo">6. Higher-educated people</td>
+    <td class="tg-ckur">++</td>
+    <td class="tg-ckur">+</td>
+    <td class="tg-ckur">+</td>
+    <td class="tg-pvqo"></td>
+  </tr>
+  <tr>
+    <td class="tg-sdck">7. Lower-educated people</td>
+    <td class="tg-ugdo">--</td>
+    <td class="tg-ugdo">-</td>
+    <td class="tg-ugdo">-</td>
+    <td class="tg-sdck"></td>
+  </tr>
+  <tr>
+    <td class="tg-9d5r">8. Political interests</td>
+    <td class="tg-ckur">+</td>
+    <td class="tg-ckur">+</td>
+    <td class="tg-ckur">+</td>
+    <td class="tg-9d5r"></td>
+  </tr>
+  <tr>
+    <td class="tg-lfef">9. Excluding political interests</td>
+    <td class="tg-ugdo">-</td>
+    <td class="tg-ugdo">-</td>
+    <td class="tg-ugdo">-</td>
+    <td class="tg-lfef"></td>
+  </tr>
+</tbody>
+</table>
 ]
 
 .pull-right[
 
 
-![](img/conditions.png)
-
 
 ]
 
+
 ---
 
-### Cross-party conditions
+### Research Design
+
+Facebook says it delivers ads based on a "relevance" score
+
+→ Facebook optimizes for ***perceived*** *match* between the content/message of the ad and the person seeing the ad
+
+We hypothesize some audiences might therefore be *harder to reach*
+  + as in: more expensive
+  + reach less people given the same conditions (budget and timing)
+  
+
+  
+--
+
+In order to test the algorithm we need to:
+
++ Place ads with ad goal: *Reach*
++ Ad optimization: *Unique users reached*
+
+--
+
+Optimizing on Reach (rather than Traffic): 
+   
++ the algorithm has to work more on its internal assumptions 
++ doesn't use user cues (i.e. clicks) as much to decide who is going to see the ad
+
+---
+
+class: center, middle
+
+# Ad Creative and Setup
+
+
+---
+
+## Ad Creative and Setup
+
++ Infos about the election and how to vote from the *Rijksoverheid*
+
++ Official Get-Out-To-Vote campaign "Elke Stem Telt" for local elections
+
++ Selected *Five* Images from campaign that we would like to run
+
+<br>
+
+<img src="img/Logo-ElkeStemTelt_on-white_RGB.png" width="50%" height="50%">
+
++ https://www.kiesraad.nl/verkiezingen/gemeenteraden
+
+---
+
+## Ad Images (1 and 2 out of 5)
+
+.pull-left[
+
+<img src="img/elke-stem-telt-social-slider (1).jpg" width="90%" height="90%">
+
+]
+
+
+.pull-right[
+
+<img src="img/elke-stem-telt-social-slider (2).jpg" width="90%" height="90%">
+
+]
+
+
+---
+
+
+## Ad Images (3 and 4 out of 5)
+
+.pull-left[
+
+<img src="img/elke-stem-telt-social-slider (3).jpg" width="90%" height="90%">
+
+]
+
+
+.pull-right[
+
+<img src="img/elke-stem-telt-social-slider (4).jpg" width="90%" height="90%">
+
+]
+
+
+---
+
+## Ad Images (5 out of 5)
+
+
+.pull-left[
+
+<img src="img/elke-stem-telt-social-slider (5).jpg" width="90%" height="90%">
+
+]
+
+
+---
+
+## How the ad looked like on Desktop
+
+<img src="img/example_pvda.png" style="float: left; width: 37%; margin-right: 1%; margin-bottom: 0.5em;">
+<img src="img/example_gl.png" style="float: left; width: 37%; margin-right: 1%; margin-bottom: 0.5em;">
+<p style="clear: both;">
+
+
+---
+
+## How the ad looked like on Desktop
+
+
+<img src="img/example_vvd.png" style="float: left; width: 37%; margin-right: 1%; margin-bottom: 0.5em;">
+
+---
+
+## How the ad looked like on Desktop
+
+
+<img src="img/example_vvd.png" style="float: left; width: 37%; margin-right: 1%; margin-bottom: 0.5em;">
+
+---
+
+
+class: center, middle
+
+## Results
+
+---
+
+class: white
+
+### Descriptives
+
 
 --
 
 .pull-left[
-Hypotheses:
 
-Audiences that lean left 
-  + interested in environment
-  + social security
-  + high educated
-  + women
-  
-are harder to reach for right-leaning parties (and vice versa)
+```{r, echo=F}
+overview <- readRDS("data/overview.rds")
 
+share_dat <- overview %>% 
+  drop_na(ad_name) %>%
+  # set_names(names(overview_uva)) %>% 
+  mutate(pair = readr::parse_number(ad_set_name)) %>% 
+  mutate(comparison = case_when(
+    str_detect(ad_name, "Economy") ~ "Economy",
+    str_detect(ad_name, "Environment") ~ "Environment",
+    str_detect(ad_name, "Education") ~ "Education",
+    str_detect(ad_name, "Politics") ~ "Politics",
+    T ~ NA_character_
+  )) %>% 
+  drop_na(comparison) %>% 
+  # count(ad_name)
+  group_by(pair, comparison, party) %>% 
+  mutate(total = sum(reach),
+         share = reach/total*100) %>% 
+  ungroup()
 
-Audiences that lean right 
-  + interested in business
-  + lower-educated + vocational
-  + men
-
-are harder to reach for left-leaning parties (and vice versa)
+overview %>% #filter(is.na(targeting))
+  drop_na(targeting) %>% 
+  # filter(targeting == "No Targeting") %>%
+  mutate(party = fct_relevel(party, c("PvdA", "GroenLinks", "VVD"))) %>% 
+  ggplot(aes(party, cost_per_1_000_people_reached)) + # Move y and x here so than they can be used in stat_*
+  geom_jitter(width = 0.2) +
+  geom_boxplot(aes(color = party), width = 0.2) +
+  # stat_summary(aes(color = party), fun = mean, fun.min = mean, fun.max = mean,
+  #              geom = "crossbar", width = 0.5) +
+  scale_color_parties() +
+  theme_minimal() +
+  theme(legend.position = "none", plot.title = element_text(size = 19, face = "bold")) +
+  # ggpubr::stat_compare_means() +
+  EnvStats::stat_mean_sd_text(digits = 2) +
+  labs(y = "Cost per 1000 users reached\nin Euros (across all conditions)", x = "Party", title = "Cost per 1000 users\n") 
+```
 
 ]
 
-
+--
 
 .pull-right[
 
+```{r, echo=F}
 
-![](img/conditions.png)
+overview %>% 
+  drop_na(targeting) %>% 
+  # filter(targeting == "No Targeting") %>%
+  mutate(party = fct_relevel(party, c("PvdA", "GroenLinks", "VVD"))) %>% 
+  ggplot(aes(party, reach)) + # Move y and x here so than they can be used in stat_*
+  geom_jitter(width = 0.2) +
+  geom_boxplot(aes(color = party), width = 0.2) +
+  # stat_summary(aes(color = party), fun = mean, fun.min = mean, fun.max = mean,
+  #              geom = "crossbar", width = 0.5) +
+  scale_color_parties() +
+  theme_minimal() +
+  theme(legend.position = "none", plot.title = element_text(size = 19, face = "bold")) +
+  # ggpubr::stat_compare_means() +
+  EnvStats::stat_mean_sd_text(digits = 0) +
+  labs(y = "Reach (across all conditions)", x = "Party", title = "Reach (unique people)\n") 
+```
 
 
 ]
 
+
+
+
 ---
 
-### Intra-party conditions: Entertainment vs. Political audiences
+
+class: white
+
+## Hypothesis H3
 
 .pull-left[
-The Facebook algorithm may assume that informative ads about election day are
 
-+ *less relevant* for people interested in entertainment (sports, TV shows, video games) 
-+ than for people already interested in (local) politics
+H3a: Parties with a greater share of supporters pay less for reaching 1000 users. 
 
-<br>
 
-Therefore, we expect that **ads targeted at people interested in entertainment**
-  + are **more costly** and **reach less people** 
-  + compared to people already interested in politics
-  
+```{r}
+mod_nobreak_h3a <- lm(cost_per_result ~ party + engagement, data = overview %>% filter(targeting == "No Targeting"))
+# lm.beta::lm.beta(mod)
+
+    
+sjPlot::plot_model(mod_nobreak_h3a, show.values = T, show.p = T) +
+  theme_minimal() +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  ylim(-0.13, 0.05) +
+  ggtitle("Cost per 1000 users") +
+  theme(plot.title = element_text(size = 19, face = "bold")) 
+```
+
+]
+
+--
+
+.pull-right[
+
+H3b: Parties with a greater share of supporters pay less for reaching 1000 users. 
+
+
+```{r}
+mod_nobreak_h3b <- lm(reach ~ party + engagement, overview %>% filter(targeting == "No Targeting"))
+# lm.beta::lm.beta(mod)
+
+    
+sjPlot::plot_model(mod_nobreak_h3b, show.values = T, show.p = T) +
+  theme_minimal() +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  # ylim(-0.13, 0.05) +
+  ggtitle("Reach") +
+  theme(plot.title = element_text(size = 19, face = "bold")) 
+```
 ]
 
 
 
+---
+
+## Hypothesis H1 and H2
+
+.pull-left[
+
+> H1: The more relevant an audience is for an ad, the cheaper is the cost for reaching 1000 users in that audience.
+
+```{r}
+# overview %>%
+#   filter(targeting != "No Targeting") %>% 
+#   ggplot(aes(relevance, cost_per_1_000_people_reached)) +
+#   geom_jitter(aes(color = party)) +
+#   geom_smooth(method = "lm") +
+#   ggpubr::stat_cor() 
+# 
+# mo <- lm(cost_per_result ~ party + targeting + relevance, data = overview %>% filter(targeting != "No Targeting")) 
+# 
+# sjPlot::plot_model(mo, show.p = T, show.values = T, sort.est = T, type = "std")
+# 
+# yo <- lm.beta::lm.beta(mo)
+# # yo %>% summary(standardized = T)
+# summary(yo, standardized = T)
+# 
+# broom::tidy(yo)
+
+stargazer::stargazer(lm(cost_per_result ~ party + targeting, data = overview %>% filter(targeting != "No Targeting")),
+                # lm(cost_per_result ~ targeting + relevance, data = overview %>% filter(targeting != "No Targeting")),
+                # lm(cost_per_result ~ party + targeting, data = overview %>% filter(targeting != "No Targeting")),
+                lm(cost_per_result ~ party + targeting + relevance, data = overview %>% filter(targeting != "No Targeting")),
+                type = "html")
+```
+]
+
+
+
+```{r}
+# library(lme4)
+# 
+# summary(mod <- lm(cost_per_result ~  + engagement, data = overview %>%
+#                     filter(targeting != "No Targeting")))
+# 
+# sjPlot::plot_model(mod, show.p = T, show.values = T, type = "std")# +
+```
+
 .pull-right[
 
+> H2: The more relevant an audience is for an ad, the more are ads delivered to that audience.
 
-![](img/conditions.png)
+
+```{r, results='asis'}
+mod_nobreak_h2 <- lm(share ~ relevance + engagement, data = share_dat %>% 
+  filter(targeting != "No Targeting"))
+# lm.beta::lm.beta(mod)
+
+# texreg::htmlreg(mod_nobreak_h2)
+# texreg::screenreg(mod_nobreak_h2)
 
 
+
+# sjPlot::plot_model(mod_nobreak_h2, show.p = T, show.values = T)
+
+# share_dat %>%
+#   filter(targeting != "No Targeting") %>%
+#   ggplot(aes(relevance, share, color = party)) +
+#   geom_jitter() +
+#   geom_smooth(method = "lm")
+# 
+# 
+# share_dat %>% 
+#   filter(targeting != "No Targeting") %>% 
+#   ggplot(aes(party, share)) +
+#   geom_boxplot()
+#   geom_point()
+
+stargazer::stargazer(lm(share ~ party + targeting, data = share_dat %>% filter(targeting != "No Targeting")),
+                # lm(share ~ targeting + relevance, data = overview %>% filter(targeting != "No Targeting")),
+                # lm(share ~ party + targeting, data = overview %>% filter(targeting != "No Targeting")),
+                lm(share ~ party + targeting + relevance, data = share_dat %>% filter(targeting != "No Targeting")),
+                type = "html")
+
+```
 ]
 
 ---
 
-
-### High-education vs. low-education
+## H1a,H2a and H1a,H1b
 
 .pull-left[
 
 
-The Facebook algorithm may assume that informative ads about election day are
+```{r, results='asis'}
+mod_nobreak_h1ab <- lm(cost_per_result ~ targeting + engagement + party, data = overview)
+# lm.beta::lm.beta(mod)
 
-+ *less relevant* for lower-educated audiences (lower interested in politics) 
-+ than for higher-educated audiences.
 
-<br>
+# texreg::screenreg(mod_nobreak_h1ab)
 
-Therefore, we expect that **ads targeted at lower-educated audiences**
-  + are **more costly** and **reach less people** 
-  + compared to higher-educated audiences.
-  
+
+```
+
+```{r}
+library(parameters)
+library(modelbased)
+
+contrasts_nobreak_h1ab <- estimate_contrasts(mod_nobreak_h1ab, contrast = c("targeting"),
+                                at = c("targeting")) %>% 
+  as.data.frame()  %>%  
+  mutate(Contrast = paste(Level1, "-", Level2)) %>%  
+  mutate(condition_comparison = fct_reorder(Contrast, Difference)) 
+
+contrasts_nobreak_h1ab %>% 
+  as_tibble()  %>% 
+  # filter(str_detect(Level1, "Environment excluded") & !str_detect(Level2, "Environment excluded")) %>% 
+  filter(
+    # str_count(condition_comparison, "Environment") == 2 |
+    # str_count(condition_comparison, "Economy") == 2 
+    str_count(condition_comparison, "Politics") == 2 |
+    str_count(condition_comparison, "Education") == 2 
+  ) %>% 
+  # in case the comparison is in wrong direction, change around
+  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "excluded"), .x*-1, .x)) %>%
+  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "Low"), .x*-1, .x)) %>%
+  mutate(plabel = get_plabs(p)) %>% 
+  mutate(diff_label = paste0(round(Difference, 3), plabel)) %>%
+  # mutate(condition_comparison = ifelse(
+  #   condition_comparison == "Entertainment - Politics",
+  #   "Price of politics audience vs.\nentertainment audience",
+  #   "Price of high-education audience vs.\nlow-education audience"
+  #   )) %>% 
+  ggplot(aes("", Difference)) + 
+  geom_point() +
+  geom_errorbar(aes(ymin = CI_low, ymax = CI_high), width = 0) +
+  coord_flip() +
+  geom_text(aes(label = diff_label), nudge_x = 0.1) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  labs(y = "Estimated price differences of reaching 1k users in Euro",
+       x = "Condition Comparisons") +
+  theme_minimal() +
+  scale_color_parties() +
+  theme(legend.position = "none")  +
+  # facet_grid(condition_comparison ~ ., scales= "free_y" ) +
+  facet_wrap(~condition_comparison, ncol = 1, scales= "free_y" ) +
+  theme(legend.position = "bottom",
+        strip.text.y = element_blank(), 
+        strip.background = element_rect(fill = "lightgrey")) 
+
+
+```
+
+
+
+
+
 ]
-  
+
+.pull-right[
+```{r, results='asis'}
+mod_nobreak_h2ab <- lm(share ~ targeting + party + engagement, data = share_dat)
+# lm.beta::lm.beta(mod)
+
+
+# texreg::htmlreg(mod_nobreak_h2ab)
+
+# texreg::screenreg(mod_nobreak_h2ab)
+
+# sjPlot::plot_model(mod_nobreak_h2ab, show.p = T, show.values = T)
+```
+
+
+```{r}
+contrasts_nobreak_h2ab <- estimate_contrasts(mod_nobreak_h2ab, contrast = c("targeting"),
+                                at = c("targeting")) %>% 
+  as.data.frame()  %>%  
+  mutate(Contrast = paste(Level1, "-", Level2)) %>%  
+  mutate(condition_comparison = fct_reorder(Contrast, Difference)) 
+
+contrasts_nobreak_h2ab %>% 
+  as_tibble()  %>% 
+  # filter(str_detect(Level1, "Environment excluded") & !str_detect(Level2, "Environment excluded")) %>% 
+  filter(
+    # str_count(condition_comparison, "Environment") == 2 |
+    # str_count(condition_comparison, "Economy") == 2 
+    str_count(condition_comparison, "Politics") == 2 |
+    str_count(condition_comparison, "Education") == 2 
+  ) %>% 
+  # in case the comparison is in wrong direction, change around
+  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "excluded"), .x*-1, .x)) %>%
+  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "Low"), .x*-1, .x)) %>%
+  mutate(plabel = get_plabs(p)) %>% 
+  mutate(diff_label = paste0(round(Difference, 2), plabel)) %>%
+  # mutate(condition_comparison = ifelse(
+  #   condition_comparison == "Entertainment - Politics",
+  #   "Price of politics audience vs.\nentertainment audience",
+  #   "Price of high-education audience vs.\nlow-education audience"
+  #   )) %>% 
+  ggplot(aes("", Difference)) + 
+  geom_point() +
+  geom_errorbar(aes(ymin = CI_low, ymax = CI_high), width = 0) +
+  coord_flip() +
+  geom_text(aes(label = diff_label), nudge_x = 0.1) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  labs(y = "Estimated price differences of reaching 1k users in Euro",
+       x = "Condition Comparisons") +
+  theme_minimal() +
+  scale_color_parties() +
+  theme(legend.position = "none")  +
+  # facet_grid(condition_comparison ~ ., scales= "free_y" ) +
+  facet_wrap(~condition_comparison, ncol = 1, scales= "free_y" ) +
+  theme(legend.position = "bottom",
+        strip.text.y = element_blank(), 
+        strip.background = element_rect(fill = "lightgrey")) 
+
+
+```
+
+
+]
+
+
+---
+
+
+## H1(2)c, H1(2)d, H1(2)e
+
+
+.pull-left[
+```{r, results='asis'}
+mod_nobreak_h1cg <- lm(cost_per_result ~ targeting * party + engagement, data = overview)
+# lm.beta::lm.beta(mod)
+
+
+# texreg::screenreg(mod_nobreak_h1cg)
+```
+
+
+
+
+
+```{r}
+contrasts_nobreak_h1cg <- estimate_contrasts(mod_nobreak_h1cg, contrast = c("targeting", "party"),
+                                at = c("targeting", "party")) %>% 
+  as.data.frame()  %>%  
+  mutate(Contrast = paste(Level1, "-", Level2)) %>%  
+  mutate(condition_comparison = fct_reorder(Contrast, Difference)) 
+
+contrasts_nobreak_h1cg %>% 
+  as_tibble()  %>% 
+  # filter(str_detect(Level1, "Environment excluded") & !str_detect(Level2, "Environment excluded")) %>% 
+  filter(
+    str_count(condition_comparison, "PvdA") == 2 |
+    str_count(condition_comparison, "GroenLinks") == 2 |
+    str_count(condition_comparison, "VVD") == 2
+  ) %>% 
+  filter(
+    str_count(condition_comparison, "Environment") == 2 |
+    str_count(condition_comparison, "Economy") == 2 |
+    # str_count(condition_comparison, "Politics") == 2 |
+    str_count(condition_comparison, "Education") == 2
+  ) %>%
+  mutate(party = str_extract(condition_comparison, "VVD|GroenLinks|PvdA")) %>% 
+  mutate(condition_comparison = str_remove_all(condition_comparison, "VVD|GroenLinks|PvdA")) %>% 
+  # in case the comparison is in wrong direction, change around
+  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "excluded"), .x*-1, .x)) %>%
+  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "Low"), .x*-1, .x)) %>%
+  mutate(plabel = get_plabs(p)) %>% 
+  mutate(diff_label = paste0(round(Difference, 2), plabel)) %>%
+  # mutate(condition_comparison = ifelse(
+  #   condition_comparison == "Entertainment - Politics",
+  #   "Price of politics audience vs.\nentertainment audience",
+  #   "Price of high-education audience vs.\nlow-education audience"
+  #   )) %>% 
+  ggplot(aes("", Difference, color = party)) + 
+  geom_point(position = position_dodge(width = 0.9)) +
+  geom_errorbar(aes(ymin = CI_low, ymax = CI_high), width = 0, position = position_dodge(width = 0.9)) +
+  geom_text(aes(label = diff_label, y = Difference + 0.1), position = position_dodge(width = 0.9), show.legend = F) +
+  coord_flip() +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  labs(y = "Estimated price differences of reaching 1k users in Euro",
+       x = "Condition Comparisons") +
+  theme_minimal() +
+  scale_color_parties() +
+  # facet_grid(condition_comparison ~ ., scales= "free_y" ) +
+  facet_wrap(~condition_comparison, ncol = 1, scales= "free_y" ) +
+  theme(legend.position = "bottom",
+        strip.text.y = element_blank(), 
+        strip.background = element_rect(fill = "lightgrey")) 
+```
+
+
+]
+
 .pull-right[
 
 
-![](img/conditions.png)
+```{r, results='asis'}
+mod_nobreak_h2cg <- lm(share ~ targeting * party + engagement, data = share_dat)
+# lm.beta::lm.beta(mod)
+
+
+```
+
+
+```{r}
+contrasts_nobreak_h2cg <- estimate_contrasts(mod_nobreak_h2cg, contrast = c("targeting", "party"),
+                                at = c("targeting", "party")) %>% 
+  as.data.frame()  %>%  
+  mutate(Contrast = paste(Level1, "-", Level2)) %>%  
+  mutate(condition_comparison = fct_reorder(Contrast, Difference)) 
+
+contrasts_nobreak_h2cg %>% 
+  as_tibble()  %>% 
+  # filter(str_detect(Level1, "Environment excluded") & !str_detect(Level2, "Environment excluded")) %>% 
+  filter(
+    str_count(condition_comparison, "PvdA") == 2 |
+    str_count(condition_comparison, "GroenLinks") == 2 |
+    str_count(condition_comparison, "VVD") == 2
+  ) %>% 
+  filter(
+    str_count(condition_comparison, "Environment") == 2 |
+    str_count(condition_comparison, "Economy") == 2 |
+    # str_count(condition_comparison, "Politics") == 2 |
+    str_count(condition_comparison, "Education") == 2
+  ) %>%
+  mutate(party = str_extract(condition_comparison, "VVD|GroenLinks|PvdA")) %>% 
+  mutate(condition_comparison = str_remove_all(condition_comparison, "VVD|GroenLinks|PvdA")) %>% 
+  # in case the comparison is in wrong direction, change around
+  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "excluded"), .x*-1, .x)) %>%
+  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "Low"), .x*-1, .x)) %>%
+  mutate(plabel = get_plabs(p)) %>% 
+  mutate(diff_label = paste0(round(Difference, 2), plabel)) %>%
+  # mutate(condition_comparison = ifelse(
+  #   condition_comparison == "Entertainment - Politics",
+  #   "Price of politics audience vs.\nentertainment audience",
+  #   "Price of high-education audience vs.\nlow-education audience"
+  #   )) %>% 
+  ggplot(aes("", Difference, color = party)) + 
+  geom_point(position = position_dodge(width = 0.9)) +
+  geom_errorbar(aes(ymin = CI_low, ymax = CI_high), width = 0, position = position_dodge(width = 0.9)) +
+  geom_text(aes(label = diff_label, y = Difference + 2.5), position = position_dodge(width = 0.9), show.legend = F) +
+  coord_flip() +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  labs(y = "Estimated share of delivery differences in percent",
+       x = "Condition Comparisons") +
+  theme_minimal() +
+  scale_color_parties() +
+  # facet_grid(condition_comparison ~ ., scales= "free_y" ) +
+  facet_wrap(~condition_comparison, ncol = 1, scales= "free_y" ) +
+  theme(legend.position = "bottom",
+        strip.text.y = element_blank(), 
+        strip.background = element_rect(fill = "lightgrey")) 
+
+
+```
 
 
 ]
-  
+
+
 ---
 
-### Younger vs. Older audiences
 
-The Facebook algorithm may assume that informative ads about election day are
+## Gender differences
 
-+ *less relevant* for younger people (lower turnout rate) 
-+ than for older people
 
-<br>
 
-Therefore, we expect that ads
-  + are **more costly** when reaching younger people
-  + compared to older people
+
+---
+
+## Age differences
+
+
+
+
+---
+
+## Region differences
+
+
+
+
+---
+
+## Platform differences
+
+
+
+
+---
+
+## Weird stuff?
+
+
+
+---
+
+## Open questions
 
 ---
 
@@ -1024,299 +1557,190 @@ class: center, middle
 
 ---
 
-class: center, middle
+class: white
 
-# Appendix
+### What determines delivery and costs?
 
-
-
----
-
-# My questions
-
-+ Is an experimental design even possible/desirable here?
-  + It would require to place ~10-20 ads per condition per party to be properly powered
-  + 10-20 ads per condition per party could potentially lead to overpricing the market of a targeted audience?
-  → so some ads I place might influence the outcomes for other ads
-  + is there a way to account for that in an experimental design?
-  + should I make this an observational study instead, place less ads per condition and just bite the bullet on causality being too difficult to establish in regards to treating the ad delivery algorithm?
-
-+ What kind of conditions 
-
-  + made the most sense to you?
-  + would be most valuable?
-  + how could they be improved?
-  
-  
-+ Does the measurement for ad delivery skew make sense?
-
-
-
-+ I've been struggling with the power analysis and the effect sizes I should expect so I can properly determine sample size per condition. Any advice?
-
----
-
-
-class: center, middle
-
-# Issue ads and proposed conditions
-
-## Observing differences of pricing and delivery *between* and *within a party*
-
-
----
-
-### Example Topic: Climate Change
-
---
-
-Does Facebook charge more money/skew delivery when ads about *climate change* are targeted at:
-+ people with interest in environmentalism vs. people interested in business 
-+ younger people vs. older people
-+ rural vs. urban regions 
-+ low vs. high education
-+ more right-leaning vs. left-leaning parties?
-
---
-
-<img src="img/posters/p1.png" style="float: left; width: 27%; margin-right: 1%; margin-bottom: 0.5em;">
---
-<img src="img/posters/p2.png" style="float: left; width: 27%; margin-right: 1%; margin-bottom: 0.5em;">
-<img src="img/posters/p3.png" style="float: left; width: 27%; margin-right: 1%; margin-bottom: 0.5em;">
-<p style="clear: both;">
-
-
-
----
-
-
-class: center, middle
-
-
-### Going Micro to Go Negative
-
-#### Research Question: 
-
-To what extent is political microtargeting used by<br>political advertisers to deliver uncivil
-campaign messages?
-
----
-
-
-class: center, middle
-
-## Going micro
-
-
----
-
-### Political Microtargeting
-
-> Personalizing political campaign messages based on large-scale data collection
-
-+ Cambridge Analytics
-
-+ IRA influence campaign
-
-+ Topic is understudied in European context
-
----
-
-class: center, middle
-
-## Negative campaigning
-
-*"going negative"*
-
----
-
-## Negative campaigning
-
-Negative campaigning is a type of advertising that highlights alleged weaknesses of the competitor.
-
---
-
-*However:* Negative ads are not just negative ads
-
-According to Brooks & Geer (2012) negative campaigning entails:
-
-+ *civil* negative ads
-
-  + legitimate criticism of the opponent
-  
---
-
-+ *uncivil* negative ads 
-
-  + "disrespectful, poisonous and hyperbolic [...]" language that "break norms of conversation [...]" (Otto et al. 2020)
-
-
-<br>
-
-> Let's take a closer look at incivility as a form of negative advertising
-
----
-
-class: center, middle
-
-## Political Incivility
-
-*Is it good to be bad?*
-
----
-
-## Political Incivility
-
-Acoording to Mutz (2016) political incivility can:
-
- + lower trust in government
-
- + reduce faith in institutions 
-
- + lessen respect for opposing views
-
---
-
-**But** it can also: 
-
-+ generate stronger interest in voting & in politics more generally (Herbst 2010)
-
-+ increase the memorability of the topics discussed; also known as *negativity bias* (Sydnor 2019)
-
----
-
-
-class: center, middle
-
-## Backlash effect
-
-*When attacking your opponent backfires*
-
---
-
-*or: when it's bad to be bad*
-
----
-
-## Backlash effect
-
-Negative advertising can backfire because voters feel sympathetic toward candidates under attack (Walter & van der Eijk, 2019).
-
-Meta-analysis confirms a backlash effect in 33 out of 40 studies (Lau et al., 2009)
-
---
-
-Backlash effect can be dependent on voter (and candidate) characteristics:
-
- + Backlash towards African-American attack sponsors is greater among white voters (Krupnikov and Piston 2015)
-
- + Nai & Maier (2020) also demonstrate that with incivil ads:
-
---
-
-    + people high in conflict avoidance significantly reduce rating of the **attack sponsor**
-
-    + individuals high in psychopathy traits rate the **target more negatively**
-
-
----
-
-
-class: center, middle
-
-## Microtargeting and Negative ads
-
-*"going micro"*
-
----
-
-
-## Microtargeting and Negative ads
-
-Microtargeting may lower the risk of backlash effects because:
-
-+ Negative messages can be targeted towards individuals who are most susceptible to them (Nai & Maier 2020)
-
-  + also means: people likely to dislike negativity can be excluded
-
---
-  
-+ Negative campaigning is seen as undesirable and harmful by the public
-    + (Mutz and Reeves 2005; Mattes and Redlawsk 2014)
-
---
-
-+ A smaller range of individuals are affected if there were to be a backlash
-
-*Hypotheses:*
-
-> H1: Microtargeted ads from political campaigns are more negative than ads targeted at more general audiences.
-
-> H2: For outside groups we should not find this microtargeting effect because they are less concerned about reputational hits.
-
----
-
-
-## Microtargeting and Negative ads
-
-Literature that have looked at this is scarce but two examples stood out:
-
-+ Fowler et al. (2020) analyze TV and Facebook and find the latter to be more positive
-
-  + Campaigns are more likely to have lists of supporters and they are less targeted with negative ads
-
-  + However: only compares TV ads with Facebook and does not differentiate between levels of targeting
-  
---
-
-<br>
-  
-+ Jain and Wood (2020) analyze Facebook ad library data
-
-  + Computer Science pre-print, does not go in a lot of detail but they do find a positive effect of microtargeting on tone
-
-  + However: measure of microtargeting is just received impressions
-
-
----
-
-## Measurement
-
-+ Dependent Variable: Negativity/Incivility
-  + Perspective API (Toxicity)
-  + Prediction by supervised machine learning model trained on incivil/civil negative & positive ads
-      
---
-  
-+ Independent Variable: Microtargeting
-
-> `Potential Reach` estimates how many people your ad could potentially reach depending on the targeting and ad placement options you select while creating an ad. ~Facebook Ad Library
-
---
 
 .pull-left[
-+ 100 - 1.000 individuals reached
-+ 1.001 - 5.000
-+ 5.001 - 10.000
-+ 10.001 - 50.000
-+ 50.001 - 100.000
-+ 100.001 - 500.000
-+ 500.001 - 1 million
-+ +1 million
+
+**Ad auctions**
+
+Each time there is a possibility to show an ad, an ad auction takes place.
+
+The winner of the auction is determined by
+
+1.) *bids*
+
+2.) *ad relevance*
+
+
 ]
 
 .pull-right[
-  <br>
-  <br>
-  <br>
-  The smaller the reach the more microtargeted is an advertisement.
+```{r, echo = F}
+nomnoml::nomnoml("#direction: right
+[Bid|what the advertiser is willing to pay, i.e. the budget]->[Price]
+[Ad relevance|1.) predicated probability that showing ad leads to desired outcome (e.g. clicks, views)
+2.) conforming to quality standards (e.g. no clickbait)]
+[Ad relevance]->[Price]")
+
+```
+]
+
+
+
+
+
+---
+
+
+class: center, middle
+
+## Poltical Microtargeting since 2016
+
+--
+
+Ad libraries and **limitations to targeting**
+
+
+
+
+---
+
+### Poltical Microtargeting since 2016
+
+**Google** now only allows targeting by age, gender and location for political ads.
+
+**Facebook** also limited ad targeting options 
+  + disallowing targeting based on race, religion and more
+  
+--
+  
+.pull-left[
+```{r, out.width="160%", echo = F}
+knitr::include_graphics("img/remove_targeting.png")
+```
+]
+
+.pull-right[
+<br>
+<br>
+<br>
+[facebook.com/business/news/removing-certain-ad-targeting-options-and-expanding-our-ad-controls](https://www.facebook.com/business/news/removing-certain-ad-targeting-options-and-expanding-our-ad-controls)
 ]
 
 
 ---
 
-## Results
 
+### Poltical Microtargeting since 2016
+
+**Google** now only allows targeting by age, gender and location for political ads.
+
+**Facebook** also limited ad targeting options 
+  + disallowing targeting based on race, religion and more
+  
+<br>
+
+Facebook still allows targeting based on:
+  + detailed demographics 
+  + users' declared interests 
+  + Behavioural targeting 
+  + Custom and Lookalike Audiences
+
+
+---
+
+
+class: center, middle
+
+# Ad Objectives,<br>Optimizations<br>and Relevancy
+
+---
+
+### Ad Objectives, Optimizations and Relevancy
+
+There is more than just targeting criteria that decides who sees political ads:
+
++ **Ad objective** = what is the goal of the ad?
+
+    for example: generate web traffic, like Facebook page, buy products
+    
+--
+
++ **Optimization** = how should the goal be achieved?
+
+    key metric to be optimized on: number of exposed users, clicks, conversions
+    
+--
+
++ **Relevancy** = how relevant is the ad to the user
+
+```{r, out.width="70%", echo = F}
+knitr::include_graphics("img/relevant_quote.png")
+```
+
+--
+
+→ ***Implies big role of the ad delivery algorithm***
+
+
+
+---
+
+class: center, middle
+
+## Prior investigations into the<br>role of the ad delivery algorithm
+
+---
+
+### Pricing differences in the US 2020 election
+
++ Biden campaign paid more than **6x more** 
+  + compared to Trump campaign when targeting older voters. [(The Markup 2020)](https://themarkup.org/election-2020/2020/10/29/facebook-political-ad-targeting-algorithm-prices-trump-biden)
+  
+  
+<center>
+```{r, out.width="60%", echo = F}
+knitr::include_graphics("img/older.png")
+```
+</center>
+  
+<!-- ![](img/older.png) -->
+  
+
+---
+
+
+
+
+### Why study black box of the Facebook algorithm
+
+
++ Facebook may (dis-)advantage certain parties
+
+  + Equal-time rule?
+
+--
+
++ Parties may pay more money to persuade potential voters
+
+  + It might be more costly to reach people who are undecided
+
+--
+
++ Political campaigns may not reach their intended audiences 
+
+  + only the people that *already agree with the message*
+  
+  + certain groups might be excluded entirely
+  
+  + potentially exasperates the fragmentation of the political landscape
+
+
+
+---
 
 ---
 

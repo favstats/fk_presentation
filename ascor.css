@@ -20,12 +20,12 @@ h2, h3 {
 }
 
 p,  a,  code {
-  font-size: 1.0em;
+  font-size: 0.95em;
   color: #000;
 }
 
 ul, li {
-  font-size: 1em;
+  font-size: 0.95em;
   color: #000;
 }
 
@@ -160,14 +160,14 @@ ul li::marker {
 .black p,
 .black a,
 .black code {
-  font-size: 1em;
+  font-size: 0.95em;
   color: #fff;
 }
 
 
 .black ul,
 .black li {
-  font-size: 1em;
+  font-size: 0.95em;
   color: #fff;
 }
 
