@@ -1,5 +1,5 @@
 ---
-title: "Black Box Targeting"
+title: "Automated Microtargeting"
 subtitle: "Exploring the Influence of the Facebook Ad Delivery Algorithm in the Dutch Context"
 author: "Fabio Votta, Tom Dobber, Claes de Vreese, Natali Helberger"
 date: "`r Sys.Date()`"
