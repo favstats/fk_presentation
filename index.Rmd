@@ -753,6 +753,10 @@ class: center, middle
 
 --
 
+Estimate linear regressions with IVs: targeting criteria and party
+
+DV: cost per 1000 users, reach (unique people)
+
 All models presented here are controlled for engagement
 
 ---
@@ -2085,7 +2089,7 @@ overview %>%
 
 .pull-right[
 
-> H2: The more are ads delivered
+> H2: The more releveant the more are ads delivered
 
 
 ```{r}
