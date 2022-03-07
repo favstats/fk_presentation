@@ -100,6 +100,7 @@ Meta says:
 
 
 
+
 ### Prior Research into Ad Delivery Algorithms
 
 **Job ads and Housing**
@@ -210,6 +211,36 @@ Regarding political ads [(Ali et al., 2021)](https://dl.acm.org/doi/pdf/10.1145/
 
 ---
 
+class: center, middle
+
+# More than just targeting:
+
+## ad objectives, optimizations, relevance and pricing
+
+---
+
+### Ad objectives and optimizations
+
+There is more than just targeting criteria that decides who sees political ads:
+
++ **Ad objective** = what is the goal of the ad?
+
+    for example: generate web traffic, like Facebook page, buy products
+    
+--
+
++ **Optimization** = how should the goal be achieved?
+
+    key metric to be optimized on: number of exposed users, clicks, conversions
+    
+
+
+→ ***Implies big role of the ad delivery algorithm***
+
+
+
+---
+
 
 
 ### How are ad costs determined?
@@ -242,6 +273,9 @@ The winner of the auction is determined by *bids* and *ad relevance*:
 
 
 ---
+
+
+
 
 class: center, middle
 
@@ -625,17 +659,7 @@ class: white
 
 ### Research Design
 
-Facebook says it delivers ads based on a "relevance" score
 
-→ Facebook optimizes for ***perceived*** *match* between the content/message of the ad and the person seeing the ad
-
-We hypothesize some audiences might therefore be *harder to reach*
-  + as in: more expensive
-  + reach less people given the same conditions (budget and timing)
-  
-
-  
---
 
 In order to test the algorithm we need to:
 
@@ -2404,9 +2428,14 @@ Our finding do not always align with expectations:
 
 **However:**
 
-We find that Meta ad delivery algorithm prioritizes certain parties and audiences:
+We find that Meta ad delivery algorithm prioritizes certain parties and audiences for political advertising
 
---
+
+---
+
+
+### Summary
+
 
 + Compared to GroenLinks and VVD:
 
@@ -2426,6 +2455,7 @@ We find that Meta ad delivery algorithm prioritizes certain parties and audience
   
   + more expensive to reach (~10%)
   + deliver more (~-1.4k less per ad)
+  + are cheaper and deliver more for GroenLinks (~2%, compared to VVD)
   
 --
 
@@ -2477,6 +2507,21 @@ overview %>%
   gather(key, value, -party) %>%
   mutate(value = 1-value) %>%
   group_by(key) %>%
+  summarise(value = mean(value))
+
+
+overview %>% 
+  filter(str_detect(targeting, "Environment")) %>% 
+  mutate(pair = readr::parse_number(ad_set_name)) %>% 
+  select(party, targeting, reach, pair) %>% 
+  drop_na(targeting) %>% 
+  pivot_wider(names_from = party, values_from = reach) %>% 
+  mutate(perc_vvd = GroenLinks / VVD,
+         perc_pvda = GroenLinks / PvdA) %>% 
+  select(targeting, perc_vvd, perc_pvda) %>% 
+  gather(key, value, -targeting) %>% 
+  mutate(value = 1-value) %>% 
+  group_by(key) %>% 
   summarise(value = mean(value))
 ```
 
@@ -2554,8 +2599,23 @@ It would:
 
 + Analysis over time (costs and delivery each day)
 
+
 ---
 
+
+## Open questions
+
+
++ Should we reach out to Facebook about this? How?
+
++ Is this a mini-scandal?
+
++ Post-hoc explanations for why see different results from what we expected?
+
+
+
+
+---
 
 ## Open questions
 
@@ -2799,41 +2859,6 @@ Facebook still allows targeting based on:
 ---
 
 
-class: center, middle
-
-# Ad Objectives,<br>Optimizations<br>and Relevancy
-
----
-
-### Ad Objectives, Optimizations and Relevancy
-
-There is more than just targeting criteria that decides who sees political ads:
-
-+ **Ad objective** = what is the goal of the ad?
-
-    for example: generate web traffic, like Facebook page, buy products
-    
---
-
-+ **Optimization** = how should the goal be achieved?
-
-    key metric to be optimized on: number of exposed users, clicks, conversions
-    
---
-
-+ **Relevancy** = how relevant is the ad to the user
-
-```{r, out.width="70%", echo = F}
-knitr::include_graphics("img/relevant_quote.png")
-```
-
---
-
-→ ***Implies big role of the ad delivery algorithm***
-
-
-
----
 
 class: center, middle
 
