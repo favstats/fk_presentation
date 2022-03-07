@@ -243,26 +243,11 @@ The winner of the auction is determined by *bids* and *ad relevance*:
 
 ---
 
-### Political Microtargeting and Ad Delivery Algorithms
+class: center, middle
 
-
-+ Severely limiting or banning microtargeting is *inadequate*
-
-It would:
-
-1. not end “targeting”
-
-2. give more “autonomy” to the platform and its ad delivery algorithm
-
-3. would make it more difficult to create transparency
-
-<br>
-
-→ *regulations that only focus on the advertiser “capabilities” and not also the ad delivery algorithm falls short*
+## The Dutch case
 
 ---
-
-
 
 class: white
 
@@ -624,16 +609,6 @@ We expect that the Meta ad delivery algorithm has an easier time finding a relev
 
 class: white
 
-### Targeting Criteria and Relevance Coding
-
-
-<img src="img/relevance_coding.png" width="90%">
-
-
----
-
-class: white
-
 ### Design Overview
 
 + We determined the minimum number of ads we need per condition and that is *5* 
@@ -645,122 +620,8 @@ class: white
 </center>
 
 
-
 ---
 
-
-
-### Research design
-
-.pull-left[
-<style type="text/css">
-.tg  {border-collapse:collapse;border-color:#ccc;border-spacing:0;}
-.tg td{background-color:#fff;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
-  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{background-color:#f0f0f0;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
-  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-5otb{border-color:inherit;color:#656565;text-align:left;vertical-align:top}
-.tg .tg-kdu2{background-color:#b4a7d5;border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-ckur{background-color:#ffffff;border-color:inherit;color:#32cb00;text-align:left;vertical-align:top}
-.tg .tg-fbme{background-color:#ffffff;border-color:inherit;color:#036400;text-align:left;vertical-align:top}
-.tg .tg-7vhs{background-color:#dbd3e7;border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-r3xs{background-color:#b6d7a9;border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-ugdo{background-color:#ffffff;border-color:inherit;color:#fe0000;text-align:left;vertical-align:top}
-.tg .tg-ko5t{background-color:#d8ead2;border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-ry9a{background-color:#ffffff;border-color:inherit;color:#656565;text-align:left;vertical-align:top}
-.tg .tg-c6of{background-color:#ffffff;border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-pvqo{background-color:#fe9900;border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-sdck{background-color:#f9cc9a;border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-9d5r{background-color:#a5c1f4;border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-lfef{background-color:#cbdafb;border-color:inherit;text-align:left;vertical-align:top}
-</style>
-<table class="tg">
-<thead>
-  <tr>
-    <th class="tg-0pky">Targeting</th>
-    <th class="tg-0pky">GroenLinks</th>
-    <th class="tg-0pky">PvdA</th>
-    <th class="tg-0pky">VVD</th>
-    <th class="tg-0pky"></th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td class="tg-0pky">1. No Targeting</td>
-    <td class="tg-5otb">o</td>
-    <td class="tg-5otb">o</td>
-    <td class="tg-5otb">o</td>
-    <td class="tg-0pky"></td>
-  </tr>
-  <tr>
-    <td class="tg-r3xs">2. Environmental interests</td>
-    <td class="tg-fbme">+</td>
-    <td class="tg-ugdo">-</td>
-    <td class="tg-ugdo">-</td>
-    <td class="tg-r3xs"></td>
-  </tr>
-  <tr>
-    <td class="tg-ko5t">3. Excluding environmental interests</td>
-    <td class="tg-ugdo">-</td>
-    <td class="tg-ry9a">o</td>
-    <td class="tg-ry9a">o</td>
-    <td class="tg-ko5t"></td>
-  </tr>
-  <tr>
-    <td class="tg-kdu2">4. Economic interests</td>
-    <td class="tg-c6of">-</td>
-    <td class="tg-c6of">-</td>
-    <td class="tg-c6of">+</td>
-    <td class="tg-kdu2"></td>
-  </tr>
-  <tr>
-    <td class="tg-7vhs">5. Excluding Economic interests</td>
-    <td class="tg-c6of">o</td>
-    <td class="tg-c6of">o</td>
-    <td class="tg-c6of">-</td>
-    <td class="tg-7vhs"></td>
-  </tr>
-  <tr>
-    <td class="tg-pvqo">6. Higher-educated people</td>
-    <td class="tg-ckur">++</td>
-    <td class="tg-ckur">+</td>
-    <td class="tg-ckur">+</td>
-    <td class="tg-pvqo"></td>
-  </tr>
-  <tr>
-    <td class="tg-sdck">7. Lower-educated people</td>
-    <td class="tg-ugdo">--</td>
-    <td class="tg-ugdo">-</td>
-    <td class="tg-ugdo">-</td>
-    <td class="tg-sdck"></td>
-  </tr>
-  <tr>
-    <td class="tg-9d5r">8. Political interests</td>
-    <td class="tg-ckur">+</td>
-    <td class="tg-ckur">+</td>
-    <td class="tg-ckur">+</td>
-    <td class="tg-9d5r"></td>
-  </tr>
-  <tr>
-    <td class="tg-lfef">9. Excluding political interests</td>
-    <td class="tg-ugdo">-</td>
-    <td class="tg-ugdo">-</td>
-    <td class="tg-ugdo">-</td>
-    <td class="tg-lfef"></td>
-  </tr>
-</tbody>
-</table>
-]
-
-.pull-right[
-
-
-
-]
-
-
----
 
 ### Research Design
 
@@ -890,19 +751,184 @@ class: center, middle
 
 ## Results
 
+--
+
+All models presented here are controlled for engagement
+
 ---
 
 class: white
 
 ### Descriptives
 
+.pull-left[
+
+```{r}
+overview <- readRDS("data/overview.rds")
+
+set.seed(24101991)
+
+overview %>% 
+  drop_na(targeting) %>% 
+  mutate(party = fct_relevel(party, c("PvdA", "GroenLinks", "VVD"))) %>% 
+  mutate(targeting = fct_reorder(targeting, cost_per_1_000_people_reached)) %>% 
+  ggplot(aes(targeting, cost_per_1_000_people_reached)) +
+  geom_jitter() +
+  geom_boxplot(width = 0.3) +
+  coord_flip() +
+  theme_minimal() +
+  ggtitle("Cost per 1k users") +
+  theme(plot.title = element_text(size = 19, face = "bold")) 
+
+```
+
+]
+
+
+.pull-right[
+
+```{r}
+overview %>% 
+  drop_na(targeting) %>% 
+  mutate(party = fct_relevel(party, c("PvdA", "GroenLinks", "VVD"))) %>% 
+  mutate(targeting = fct_reorder(targeting, reach)) %>% 
+  ggplot(aes(targeting, reach)) +
+  geom_jitter() +
+  geom_boxplot(width = 0.3) +
+  coord_flip() +
+  theme_minimal() +
+  ggtitle("Reach") +
+  theme(plot.title = element_text(size = 19, face = "bold")) 
+```
+
+]
+
+
+
+---
+
+
+class: white
+
+### Descriptives
+
+
+.pull-left[
+
+```{r}
+
+overview %>% 
+  drop_na(targeting) %>% 
+  mutate(party = fct_relevel(party, c("PvdA", "GroenLinks", "VVD"))) %>% 
+  mutate(targeting = fct_reorder(targeting, cost_per_1_000_people_reached)) %>% 
+  ggplot(aes(targeting, cost_per_1_000_people_reached)) +
+  geom_jitter(aes(color = party)) +
+  geom_boxplot(width = 0.3) +
+  coord_flip() +
+  theme_minimal()  +
+  scale_color_parties() +
+  theme(legend.position = "bottom") +
+  ggtitle("Cost per 1k users") +
+  theme(plot.title = element_text(size = 19, face = "bold")) 
+
+```
+
+]
+
+
+.pull-right[
+
+```{r}
+overview %>% 
+  drop_na(targeting) %>% 
+  mutate(party = fct_relevel(party, c("PvdA", "GroenLinks", "VVD"))) %>% 
+  mutate(targeting = fct_reorder(targeting, reach)) %>% 
+  ggplot(aes(targeting, reach)) +
+  geom_jitter(aes(color = party)) +
+  geom_boxplot(width = 0.3) +
+  coord_flip() +
+  theme_minimal() +
+  scale_color_parties() +
+  theme(legend.position = "bottom") +
+  ggtitle("Reach") +
+  theme(plot.title = element_text(size = 19, face = "bold")) 
+```
+
+]
+
+
+---
+
+class: white
+
+### Descriptives
+
+.pull-left[
+
+```{r}
+
+overview %>% 
+  drop_na(targeting) %>% 
+  mutate(party = fct_relevel(party, c("PvdA", "GroenLinks", "VVD"))) %>% 
+  mutate(targeting = fct_reorder(targeting, cost_per_1_000_people_reached)) %>% 
+  ggplot(aes(targeting, cost_per_1_000_people_reached, color = party)) +
+  geom_boxplot() +
+  coord_flip() +
+  theme_minimal() +
+  scale_color_parties() +
+  theme(legend.position = "bottom")+
+  ggtitle("Cost per 1k users") +
+  theme(plot.title = element_text(size = 19, face = "bold")) 
+
+```
+
+]
+
+.pull-right[
+
+```{r}
+
+overview %>% 
+  drop_na(targeting) %>% 
+  mutate(party = fct_relevel(party, c("PvdA", "GroenLinks", "VVD"))) %>% 
+  mutate(targeting = fct_reorder(targeting, cost_per_1_000_people_reached)) %>% 
+  ggplot(aes(targeting, cost_per_1_000_people_reached, color = party)) +
+  geom_boxplot() +
+  coord_flip() +
+  theme_minimal() +
+  scale_color_parties() +
+  theme(legend.position = "bottom") +
+  ggtitle("Reach") +
+  theme(plot.title = element_text(size = 19, face = "bold")) 
+
+```
+]
+
+
+---
+
+class: center, middle
+
+## Hypothesis H3
+
+H3a: Parties with a greater share of supporters pay less for reaching 1000 users. 
+
+H3b: Parties with a greater share of supporters reach more people than smaller parties.
+
+
+
+---
+
+
+class: white
+
+### Hypothesis H3: descriptives
 
 --
 
 .pull-left[
 
 ```{r, echo=F}
-overview <- readRDS("data/overview.rds")
 
 share_dat <- overview %>% 
   drop_na(ad_name) %>%
@@ -975,7 +1001,7 @@ overview %>%
 
 class: white
 
-## Hypothesis H3
+### Hypothesis H3
 
 .pull-left[
 
@@ -1001,7 +1027,8 @@ sjPlot::plot_model(mod_nobreak_h3a, show.values = T, show.p = T) +
 
 .pull-right[
 
-H3b: Parties with a greater share of supporters pay less for reaching 1000 users. 
+H3b: Parties with a greater share of supporters reach more people than smaller parties.
+
 
 
 ```{r}
@@ -1022,19 +1049,991 @@ sjPlot::plot_model(mod_nobreak_h3b, show.values = T, show.p = T) +
 
 ---
 
-## Hypothesis H1 and H2
+
+class: middle, center
+
+### Audiences interested in politics
+
+H1a: Audiences interested in politics are cheaper
+
+H2a: Ads are delivered more to people interested in politics
+
+---
+
+class: white
+
+#### H1a: Audience interested in politics is cheaper
+
+.pull-left[
+```{r}
+overview %>% 
+  mutate(party = fct_relevel(party, c("PvdA", "GroenLinks", "VVD"))) %>% 
+  filter(str_detect(targeting, "Politics")) %>% 
+  ggplot(aes(party, cost_per_1_000_people_reached, color = targeting)) +
+  geom_boxplot() +
+  # coord_flip() +
+  theme_minimal() +
+  ggthemes::scale_color_colorblind() +
+  theme(legend.position = "top")
+  
+  # overview %>% 
+  # filter(str_detect(targeting, "Politics")) %>% 
+  # group_by(party, targeting) %>% 
+  #   summarize(mean_cost = mean(cost_per_1_000_people_reached))
+```
+]
+
+--
+
+.pull-right[
+```{r}
+mod_nobreak_h1ab <- lm(cost_per_result ~ targeting * party + engagement, data = overview %>%
+                         filter(str_detect(targeting, "Politics")))
+
+
+# sjPlot::plot_model(mod_nobreak_h1ab, show.p = T, show.values = T, type = "int")
+```
+
+```{r}
+library(parameters)
+library(modelbased)
+
+contrasts_nobreak_h1ab <- estimate_contrasts(mod_nobreak_h1ab, contrast = c("targeting", "party"),
+                                at = c("targeting",  "party")) %>% 
+  as.data.frame()  %>%  
+  mutate(Contrast = paste(Level1, "-", Level2)) %>%  
+  mutate(condition_comparison = fct_reorder(Contrast, Difference)) 
+
+contrasts_nobreak_h1ab %>% 
+  as_tibble()  %>% 
+  filter(
+    str_count(condition_comparison, "PvdA") == 2 |
+    str_count(condition_comparison, "GroenLinks") == 2 |
+    str_count(condition_comparison, "VVD") == 2
+  ) %>% 
+  # filter(str_detect(Level1, "Environment excluded") & !str_detect(Level2, "Environment excluded")) %>% 
+  filter(
+    # str_count(condition_comparison, "Environment") == 2 |
+    # str_count(condition_comparison, "Economy") == 2 
+    str_count(condition_comparison, "Politics") == 2 |
+    str_count(condition_comparison, "Education") == 2 
+  ) %>% 
+
+  # in case the comparison is in wrong direction, change around
+  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "excluded"), .x*-1, .x)) %>%
+  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "Low"), .x*-1, .x)) %>%
+  mutate(plabel = get_plabs(p)) %>% 
+  mutate(diff_label = paste0(round(Difference, 3), plabel)) %>%
+  mutate(party = str_extract(condition_comparison, "VVD|GroenLinks|PvdA")) %>% 
+  mutate(condition_comparison = str_remove_all(condition_comparison, "VVD|GroenLinks|PvdA")) %>% 
+  mutate(condition_comparison = "Price of reaching audience interested in politics (vs. not interested in politics)") %>% 
+  # mutate(condition_comparison = ifelse(
+  #   condition_comparison == "Entertainment - Politics",
+  #   "Price of politics audience vs.\nentertainment audience",
+  #   "Price of high-education audience vs.\nlow-education audience"
+  #   )) %>% 
+  ggplot(aes("", Difference, color = party)) + 
+  geom_point(position = position_dodge(width = 0.9)) +
+  geom_errorbar(aes(ymin = CI_low, ymax = CI_high), width = 0, position = position_dodge(width = 0.9)) +
+  geom_text(aes(label = diff_label, y = Difference , x = c(0.8, 1.05, 1.4)), position = position_dodge(width = 0.9), show.legend = F) +
+  coord_flip() +
+  # geom_text(aes(label = diff_label), nudge_x = 0.1) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  labs(y = "Estimated price differences of reaching 1k users in Euro",
+       x = "Targeting Comparisons") +
+  theme_minimal() +
+  scale_color_parties() +
+  # facet_grid(condition_comparison ~ ., scales= "free_y" ) +
+  facet_wrap(~condition_comparison, ncol = 1, scales= "free_y" ) +
+  theme(legend.position = "bottom",
+        strip.text.y = element_blank(), 
+        strip.background = element_rect(fill = "lightgrey")) 
+
+
+```
+
+]
+
+
+
+---
+
+class: white
+
+#### H2a: Ads deliver more to people interested in politics
+
+.pull-left[
+```{r}
+share_dat %>% 
+  mutate(party = fct_relevel(party, c("PvdA", "GroenLinks", "VVD"))) %>% 
+  filter(str_detect(targeting, "Politics")) %>% 
+  ggplot(aes(party, reach, color = targeting)) +
+  geom_boxplot() +
+  # coord_flip() +
+  theme_minimal() +
+  ggthemes::scale_color_colorblind() +
+  theme(legend.position = "top")
+  
+  # overview %>% 
+  # filter(str_detect(targeting, "Politics")) %>% 
+  # group_by(party, targeting) %>% 
+  #   summarize(mean_cost = mean(cost_per_1_000_people_reached))
+```
+]
+
+--
+
+.pull-right[
+```{r}
+mod_nobreak_h2ab <- lm(reach ~ targeting * party + engagement, data = overview %>%
+                         filter(str_detect(targeting, "Politics")))
+
+
+# sjPlot::plot_model(mod_nobreak_h1ab, show.p = T, show.values = T, type = "int")
+```
+
+```{r}
+library(parameters)
+library(modelbased)
+
+contrasts_nobreak_h2ab <- estimate_contrasts(mod_nobreak_h2ab, contrast = c("targeting", "party"),
+                                at = c("targeting",  "party")) %>% 
+  as.data.frame()  %>%  
+  mutate(Contrast = paste(Level1, "-", Level2)) %>%  
+  mutate(condition_comparison = fct_reorder(Contrast, Difference)) 
+
+contrasts_nobreak_h2ab %>% 
+  as_tibble()  %>% 
+  filter(
+    str_count(condition_comparison, "PvdA") == 2 |
+    str_count(condition_comparison, "GroenLinks") == 2 |
+    str_count(condition_comparison, "VVD") == 2
+  ) %>% 
+  # filter(str_detect(Level1, "Environment excluded") & !str_detect(Level2, "Environment excluded")) %>% 
+  filter(
+    # str_count(condition_comparison, "Environment") == 2 |
+    # str_count(condition_comparison, "Economy") == 2 
+    str_count(condition_comparison, "Politics") == 2 |
+    str_count(condition_comparison, "Education") == 2 
+  ) %>% 
+
+  # in case the comparison is in wrong direction, change around
+  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "excluded"), .x*-1, .x)) %>%
+  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "Low"), .x*-1, .x)) %>%
+  mutate(plabel = get_plabs(p)) %>% 
+  mutate(diff_label = paste0(round(Difference, 3), plabel)) %>%
+  mutate(party = str_extract(condition_comparison, "VVD|GroenLinks|PvdA")) %>% 
+  mutate(condition_comparison = str_remove_all(condition_comparison, "VVD|GroenLinks|PvdA")) %>% 
+  mutate(condition_comparison = "Reach of audience interested in politics (vs. not interested in politics)") %>% 
+  # mutate(condition_comparison = ifelse(
+  #   condition_comparison == "Entertainment - Politics",
+  #   "Price of politics audience vs.\nentertainment audience",
+  #   "Price of high-education audience vs.\nlow-education audience"
+  #   )) %>% 
+  ggplot(aes("", Difference, color = party)) + 
+  geom_point(position = position_dodge(width = 0.9)) +
+  geom_errorbar(aes(ymin = CI_low, ymax = CI_high), width = 0, position = position_dodge(width = 0.9)) +
+  geom_text(aes(label = diff_label, y = Difference , x = c(0.8, 1.05, 1.4)), position = position_dodge(width = 0.9), show.legend = F) +
+  coord_flip() +
+  # geom_text(aes(label = diff_label), nudge_x = 0.1) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  labs(y = "Estimated reach differences",
+       x = "Targeting Comparisons") +
+  theme_minimal() +
+  scale_color_parties() +
+  # facet_grid(condition_comparison ~ ., scales= "free_y" ) +
+  facet_wrap(~condition_comparison, ncol = 1, scales= "free_y" ) +
+  theme(legend.position = "bottom",
+        strip.text.y = element_blank(), 
+        strip.background = element_rect(fill = "lightgrey")) 
+
+
+```
+
+]
+
+---
+
+
+class: middle, center
+
+### Audiences interested in politics
+
+H1a: Audiences interested in politics are cheaper: `not confirmed`
+
+H2a: Ads are delivered more to people interested in politics: `not confirmed`
+
+---
+
+class: middle, center
+
+### Higher vs. lower educated audience
+
+H1b: Higher-educated audiences are cheaper
+
+H2b: Ads are delivered more to higher-educated people
+
+
+
+H2c: Ads are deliver more to higher-educated people for GroenLinks
+
+H1c: Higher-educated audiences are cheaper for GroenLinks
+
+
+---
+
+class: white
+
+#### Higher vs. lower educated audience: cost
+
+.pull-left[
+```{r}
+overview %>% 
+  filter(str_detect(targeting, "Education")) %>% 
+  mutate(party = fct_relevel(party, c("PvdA", "GroenLinks", "VVD"))) %>% 
+  ggplot(aes(party, cost_per_1_000_people_reached, color = targeting)) +
+  geom_boxplot() +
+  # coord_flip() +
+  theme_minimal() +
+  ggthemes::scale_color_colorblind() +
+  theme(legend.position = "top")
+  
+  # overview %>% 
+  # filter(str_detect(targeting, "Politics")) %>% 
+  # group_by(party, targeting) %>% 
+  #   summarize(mean_cost = mean(cost_per_1_000_people_reached))
+```
+]
+
+--
+
+.pull-right[
+```{r}
+mod_nobreak_h1ab <- lm(cost_per_result ~ targeting * party + engagement, data = overview %>%
+                         filter(str_detect(targeting, "Education")))
+
+
+# sjPlot::plot_model(mod_nobreak_h1ab, show.p = T, show.values = T, type = "int")
+```
+
+```{r}
+library(parameters)
+library(modelbased)
+
+contrasts_nobreak_h1ab <- estimate_contrasts(mod_nobreak_h1ab, contrast = c("targeting", "party"),
+                                at = c("targeting",  "party")) %>% 
+  as.data.frame()  %>%  
+  mutate(Contrast = paste(Level1, "-", Level2)) %>%  
+  mutate(condition_comparison = fct_reorder(Contrast, Difference)) 
+
+contrasts_nobreak_h1ab %>% 
+  as_tibble()  %>% 
+  filter(
+    str_count(condition_comparison, "PvdA") == 2 |
+    str_count(condition_comparison, "GroenLinks") == 2 |
+    str_count(condition_comparison, "VVD") == 2
+  ) %>% 
+  # filter(str_detect(Level1, "Environment excluded") & !str_detect(Level2, "Environment excluded")) %>% 
+  filter(
+    # str_count(condition_comparison, "Environment") == 2 |
+    # str_count(condition_comparison, "Economy") == 2 
+    str_count(condition_comparison, "Politics") == 2 |
+    str_count(condition_comparison, "Education") == 2 
+  ) %>% 
+
+  # in case the comparison is in wrong direction, change around
+  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "excluded"), .x*-1, .x)) %>%
+  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "Low"), .x*-1, .x)) %>%
+  mutate(plabel = get_plabs(p)) %>% 
+  mutate(diff_label = paste0(round(Difference, 3), plabel)) %>%
+  mutate(party = str_extract(condition_comparison, "VVD|GroenLinks|PvdA")) %>% 
+  mutate(condition_comparison = str_remove_all(condition_comparison, "VVD|GroenLinks|PvdA")) %>% 
+  mutate(condition_comparison = "Price of reaching higher-educated audience (vs. lower educated)") %>% 
+  # mutate(condition_comparison = ifelse(
+  #   condition_comparison == "Entertainment - Politics",
+  #   "Price of politics audience vs.\nentertainment audience",
+  #   "Price of high-education audience vs.\nlow-education audience"
+  #   )) %>% 
+  ggplot(aes("", Difference, color = party)) + 
+  geom_point(position = position_dodge(width = 0.9)) +
+  geom_errorbar(aes(ymin = CI_low, ymax = CI_high), width = 0, position = position_dodge(width = 0.9)) +
+  geom_text(aes(label = diff_label, y = Difference , x = c(0.8, 1.05, 1.4)), position = position_dodge(width = 0.9), show.legend = F) +
+  coord_flip() +
+  # geom_text(aes(label = diff_label), nudge_x = 0.1) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  labs(y = "Estimated price differences of reaching 1k users in Euro",
+       x = "Targeting Comparisons") +
+  theme_minimal() +
+  scale_color_parties() +
+  # facet_grid(condition_comparison ~ ., scales= "free_y" ) +
+  facet_wrap(~condition_comparison, ncol = 1, scales= "free_y" ) +
+  theme(legend.position = "bottom",
+        strip.text.y = element_blank(), 
+        strip.background = element_rect(fill = "lightgrey")) 
+
+
+```
+
+]
+
+---
+
+class: white
+
+#### Higher vs. lower educated audience: reach
+
+.pull-left[
+```{r}
+share_dat %>% 
+  mutate(party = fct_relevel(party, c("PvdA", "GroenLinks", "VVD"))) %>% 
+  filter(str_detect(targeting, "Education")) %>% 
+  ggplot(aes(party, reach, color = targeting)) +
+  geom_boxplot() +
+  # coord_flip() +
+  theme_minimal() +
+  ggthemes::scale_color_colorblind() +
+  theme(legend.position = "top")
+  
+  # overview %>% 
+  # filter(str_detect(targeting, "Politics")) %>% 
+  # group_by(party, targeting) %>% 
+  #   summarize(mean_cost = mean(cost_per_1_000_people_reached))
+```
+]
+
+--
+
+.pull-right[
+```{r}
+mod_nobreak_h2ab <- lm(reach ~ targeting * party + engagement, data = overview %>%
+                         filter(str_detect(targeting, "Education")))
+
+
+# sjPlot::plot_model(mod_nobreak_h1ab, show.p = T, show.values = T, type = "int")
+```
+
+```{r}
+library(parameters)
+library(modelbased)
+
+contrasts_nobreak_h2ab <- estimate_contrasts(mod_nobreak_h2ab, contrast = c("targeting", "party"),
+                                at = c("targeting",  "party")) %>% 
+  as.data.frame()  %>%  
+  mutate(Contrast = paste(Level1, "-", Level2)) %>%  
+  mutate(condition_comparison = fct_reorder(Contrast, Difference)) 
+
+contrasts_nobreak_h2ab %>% 
+  as_tibble()  %>% 
+  filter(
+    str_count(condition_comparison, "PvdA") == 2 |
+    str_count(condition_comparison, "GroenLinks") == 2 |
+    str_count(condition_comparison, "VVD") == 2
+  ) %>% 
+  # filter(str_detect(Level1, "Environment excluded") & !str_detect(Level2, "Environment excluded")) %>% 
+  filter(
+    # str_count(condition_comparison, "Environment") == 2 |
+    # str_count(condition_comparison, "Economy") == 2 
+    str_count(condition_comparison, "Politics") == 2 |
+    str_count(condition_comparison, "Education") == 2 
+  ) %>% 
+
+  # in case the comparison is in wrong direction, change around
+  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "excluded"), .x*-1, .x)) %>%
+  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "Low"), .x*-1, .x)) %>%
+  mutate(plabel = get_plabs(p)) %>% 
+  mutate(diff_label = paste0(round(Difference, 3), plabel)) %>%
+  mutate(party = str_extract(condition_comparison, "VVD|GroenLinks|PvdA")) %>% 
+  mutate(condition_comparison = str_remove_all(condition_comparison, "VVD|GroenLinks|PvdA")) %>% 
+  mutate(condition_comparison = "Reach of higher-educated audience interested (vs. lower-educated)") %>% 
+  # mutate(condition_comparison = ifelse(
+  #   condition_comparison == "Entertainment - Politics",
+  #   "Price of politics audience vs.\nentertainment audience",
+  #   "Price of high-education audience vs.\nlow-education audience"
+  #   )) %>% 
+  ggplot(aes("", Difference, color = party)) + 
+  geom_point(position = position_dodge(width = 0.9)) +
+  geom_errorbar(aes(ymin = CI_low, ymax = CI_high), width = 0, position = position_dodge(width = 0.9)) +
+  geom_text(aes(label = diff_label, y = Difference , x = c(0.8, 1.05, 1.4)), position = position_dodge(width = 0.9), show.legend = F) +
+  coord_flip() +
+  # geom_text(aes(label = diff_label), nudge_x = 0.1) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  labs(y = "Estimated reach differences",
+       x = "Targeting Comparisons") +
+  theme_minimal() +
+  scale_color_parties() +
+  # facet_grid(condition_comparison ~ ., scales= "free_y" ) +
+  facet_wrap(~condition_comparison, ncol = 1, scales= "free_y" ) +
+  theme(legend.position = "bottom",
+        strip.text.y = element_blank(), 
+        strip.background = element_rect(fill = "lightgrey")) 
+
+
+```
+
+]
+
+---
+
+class: middle, center
+
+### Higher vs. lower educated audience
+
+H1b: Higher-educated audiences are cheaper: `confirmed`
+
+H2b: Ads are delivered more to higher-educated people: `confirmed`
+
+
+
+H1c: Higher-educated audiences are cheaper for GroenLinks: `not confirmed`
+
+H2c: Ads are deliver more to higher-educated people for GroenLinks: `not confirmed`
+
+---
+
+
+class: middle, center
+
+### Audience interested in the environment
+
+H1d: Cheaper to reach for GroenLinks
+
+H2d: Ads by GroenLinks reach more people
+
+
+---
+
+class: white
+
+### Audience interested in the environment: cost
 
 .pull-left[
 
-> H1: The more relevant an audience is for an ad, the cheaper is the cost for reaching 1000 users in that audience.
+```{r}
+overview %>% filter(str_detect(targeting, "Environment"))  %>% 
+  mutate(party = fct_relevel(party, c("PvdA", "GroenLinks", "VVD"))) %>% 
+  ggplot(aes(party, cost_per_1_000_people_reached, color = targeting)) +
+  geom_boxplot() +
+  # coord_flip() +
+  theme_minimal() +
+  ggthemes::scale_color_colorblind() +
+  theme(legend.position = "top")
+```
+
+
+]
+
+--
+
+.pull-right[
+```{r, results='asis'}
+mod_nobreak_h1cg <- lm(cost_per_result ~ targeting * party + engagement, data = overview %>% filter(str_detect(targeting, "Environment")))
+# lm.beta::lm.beta(mod)
+
+
+# texreg::screenreg(mod_nobreak_h1cg)
+```
+
 
 ```{r}
-# overview %>%
-#   filter(targeting != "No Targeting") %>% 
-#   ggplot(aes(relevance, cost_per_1_000_people_reached)) +
-#   geom_jitter(aes(color = party)) +
-#   geom_smooth(method = "lm") +
-#   ggpubr::stat_cor() 
+contrasts_nobreak_h1cg <- estimate_contrasts(mod_nobreak_h1cg, contrast = c("targeting", "party"),
+                                at = c("targeting", "party")) %>% 
+  as.data.frame()  %>%  
+  mutate(Contrast = paste(Level1, "-", Level2)) %>%  
+  mutate(condition_comparison = fct_reorder(Contrast, Difference)) 
+
+
+contrasts_nobreak_h1cg %>% 
+  as_tibble()  %>% 
+  filter(str_count(condition_comparison, "excluded") != 2) %>% 
+  filter(str_count(condition_comparison, "GroenLinks") == 2) %>% 
+  bind_rows(contrasts_nobreak_h1cg %>% 
+  as_tibble()  %>% 
+  filter(str_count(condition_comparison, "excluded") != 2) %>% 
+  filter(str_count(condition_comparison, "VVD") == 2))%>% 
+  bind_rows(contrasts_nobreak_h1cg %>% 
+  as_tibble()  %>% 
+  filter(str_count(condition_comparison, "excluded") != 2) %>% 
+  filter(str_count(condition_comparison, "PvdA") == 2)) %>% 
+  bind_rows(
+    contrasts_nobreak_h1cg %>% 
+  as_tibble()  %>% 
+  filter(str_detect(condition_comparison, "GroenLinks")) %>% 
+  filter(str_detect(condition_comparison, "Environment")) %>% 
+  filter(!str_detect(condition_comparison, "excluded")) %>% 
+  filter(str_count(condition_comparison, "GroenLinks") != 2) 
+  ) %>% 
+  # filter(str_count(condition_comparison, "VVD") != 2) %>% 
+  # filter(str_detect(Level1, "Environment excluded") & !str_detect(Level2, "Environment excluded")) %>% 
+  mutate(party = str_extract(Level1, "VVD|GroenLinks|PvdA")) %>% 
+  # in case the comparison is in wrong direction, change around
+  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(condition_comparison, "excluded"), .x*-1, .x)) %>%
+  # mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_count(condition_comparison, "VVD")==2, .x*-1, .x)) %>%
+  # mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "Low"), .x*-1, .x)) %>%
+  mutate(condition_comparison = str_remove_all(condition_comparison, "VVD|GroenLinks|PvdA")) %>% 
+  mutate(plabel = get_plabs(p)) %>% 
+  mutate(diff_label = paste0(round(Difference, 2), plabel)) %>%
+  # count(condition_comparison)
+  # mutate(condition_comparison = "Reach of audience interested in the Environment (compared to VVD and Environment excluded)") %>% 
+  mutate(condition_comparison = ifelse(
+    !str_detect(condition_comparison, "excluded"),
+    "Cost of audience interested in the Environment (compared to GroenLinks)",
+    "Cost of audience interested in the Environment (compared to Environment excluded)"
+    )) -> ww
+  
+
+ww %>% 
+    ggplot(aes("", Difference, color = party)) + 
+    geom_point(position = position_dodge(width = 0.9)) +
+    geom_errorbar(aes(ymin = CI_low, ymax = CI_high), width = 0, position = position_dodge(width = 0.9)) +
+    geom_text(aes(label = diff_label, y = Difference , x = c(0.81, 1.4, 1.08, 0.9, 1.30)), position = position_dodge(width = 0.9), show.legend = F) +
+    coord_flip() +
+    geom_hline(yintercept = 0, linetype = "dashed") +
+  labs(y = "Estimated price differences of reaching 1k users in Euro",
+         x = "Targeting Comparisons") +
+    theme_minimal() +
+    scale_color_parties() +
+    # facet_grid(condition_comparison ~ ., scales= "free_y" ) +
+    facet_wrap(~condition_comparison, ncol = 1, scales= "free_y" ) +
+    theme(legend.position = "bottom",
+          strip.text.y = element_blank(), 
+          strip.background = element_rect(fill = "lightgrey")) 
+
+
+```
+]
+
+
+
+
+
+---
+
+
+class: white
+
+### Audience interested in the environment: reach
+
+.pull-left[
+
+```{r}
+overview %>% filter(str_detect(targeting, "Environment"))  %>% 
+  mutate(party = fct_relevel(party, c("PvdA", "GroenLinks", "VVD"))) %>% 
+  ggplot(aes(party, reach, color = targeting)) +
+  geom_boxplot() +
+  # coord_flip() +
+  theme_minimal() +
+  ggthemes::scale_color_colorblind() +
+  theme(legend.position = "top")
+```
+
+
+]
+
+--
+
+.pull-right[
+```{r, results='asis'}
+mod_nobreak_h1cg <- lm(reach ~ targeting * party + engagement, data = overview %>% filter(str_detect(targeting, "Environment")))
+# lm.beta::lm.beta(mod)
+
+
+# texreg::screenreg(mod_nobreak_h1cg)
+```
+
+
+```{r}
+contrasts_nobreak_h1cg <- estimate_contrasts(mod_nobreak_h1cg, contrast = c("targeting", "party"),
+                                at = c("targeting", "party")) %>% 
+  as.data.frame()  %>%  
+  mutate(Contrast = paste(Level1, "-", Level2)) %>%  
+  mutate(condition_comparison = fct_reorder(Contrast, Difference)) 
+
+contrasts_nobreak_h1cg %>% 
+  as_tibble()  %>% 
+  filter(str_count(condition_comparison, "excluded") != 2) %>% 
+  filter(str_count(condition_comparison, "GroenLinks") == 2) %>% 
+  bind_rows(contrasts_nobreak_h1cg %>% 
+  as_tibble()  %>% 
+  filter(str_count(condition_comparison, "excluded") != 2) %>% 
+  filter(str_count(condition_comparison, "VVD") == 2))%>% 
+  bind_rows(contrasts_nobreak_h1cg %>% 
+  as_tibble()  %>% 
+  filter(str_count(condition_comparison, "excluded") != 2) %>% 
+  filter(str_count(condition_comparison, "PvdA") == 2)) %>% 
+  bind_rows(
+    contrasts_nobreak_h1cg %>% 
+  as_tibble()  %>% 
+  filter(str_detect(condition_comparison, "GroenLinks")) %>% 
+  filter(str_detect(condition_comparison, "Environment")) %>% 
+  filter(!str_detect(condition_comparison, "excluded")) %>% 
+  filter(str_count(condition_comparison, "GroenLinks") != 2) 
+  ) %>% 
+  # filter(str_count(condition_comparison, "VVD") != 2) %>% 
+  # filter(str_detect(Level1, "Environment excluded") & !str_detect(Level2, "Environment excluded")) %>% 
+  mutate(party = str_extract(Level1, "VVD|GroenLinks|PvdA")) %>% 
+  # in case the comparison is in wrong direction, change around
+  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(condition_comparison, "excluded"), .x*-1, .x)) %>%
+  # mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_count(condition_comparison, "VVD")==2, .x*-1, .x)) %>%
+  # mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "Low"), .x*-1, .x)) %>%
+  mutate(condition_comparison = str_remove_all(condition_comparison, "VVD|GroenLinks|PvdA")) %>% 
+  mutate(plabel = get_plabs(p)) %>% 
+  mutate(diff_label = paste0(round(Difference, 2), plabel)) %>%
+  # count(condition_comparison)
+  # mutate(condition_comparison = "Reach of audience interested in the Environment (compared to VVD and Environment excluded)") %>% 
+  mutate(condition_comparison = ifelse(
+    !str_detect(condition_comparison, "excluded"),
+    "Reach of audience interested in the Environment (compared to GroenLinks)",
+    "Reach of audience interested in the Environment (compared to Environment excluded)"
+    )) -> ww
+  
+
+ww %>% 
+    ggplot(aes("", Difference, color = party)) + 
+    geom_point(position = position_dodge(width = 0.9)) +
+    geom_errorbar(aes(ymin = CI_low, ymax = CI_high), width = 0, position = position_dodge(width = 0.9)) +
+    geom_text(aes(label = diff_label, y = Difference , x = c(0.81, 1.4, 1.08, 0.9, 1.30)), position = position_dodge(width = 0.9), show.legend = F) +
+    coord_flip() +
+    geom_hline(yintercept = 0, linetype = "dashed") +
+  labs(y = "Estimated reach differences",
+         x = "Targeting Comparisons") +
+    theme_minimal() +
+    scale_color_parties() +
+    # facet_grid(condition_comparison ~ ., scales= "free_y" ) +
+    facet_wrap(~condition_comparison, ncol = 1, scales= "free_y" ) +
+    theme(legend.position = "bottom",
+          strip.text.y = element_blank(), 
+          strip.background = element_rect(fill = "lightgrey")) 
+
+
+```
+]
+
+
+
+---
+
+class: middle, center
+
+### Audience interested in the environment
+
+H1d: Cheaper to reach for GroenLinks: `confirmed only compared to VVD`
+
+H2d: Ads by GroenLinks reach more people: `confirmed only compared to VVD`
+
+
+---
+
+class: middle, center
+
+### Audience interested in the economy
+
+H1e: Cheaper to reach for VVD
+
+H2e: Ads by VVD reach more people
+
+
+
+
+---
+
+class: white
+
+### Audience interested in the Economy: cost
+
+.pull-left[
+
+```{r}
+overview %>% filter(str_detect(targeting, "Economy"))  %>% 
+  mutate(party = fct_relevel(party, c("PvdA", "GroenLinks", "VVD"))) %>% 
+  ggplot(aes(party, cost_per_1_000_people_reached, color = targeting)) +
+  geom_boxplot() +
+  # coord_flip() +
+  theme_minimal() +
+  ggthemes::scale_color_colorblind() +
+  theme(legend.position = "top")
+```
+
+
+]
+
+--
+
+.pull-right[
+```{r, results='asis'}
+mod_nobreak_h1cg <- lm(cost_per_result ~ targeting * party + engagement, data = overview %>% filter(str_detect(targeting, "Economy")))
+# lm.beta::lm.beta(mod)
+
+
+# texreg::screenreg(mod_nobreak_h1cg)
+```
+
+
+```{r}
+contrasts_nobreak_h1cg <- estimate_contrasts(mod_nobreak_h1cg, contrast = c("targeting", "party"),
+                                at = c("targeting", "party")) %>% 
+  as.data.frame()  %>%  
+  mutate(Contrast = paste(Level1, "-", Level2)) %>%  
+  mutate(condition_comparison = fct_reorder(Contrast, Difference)) 
+
+
+contrasts_nobreak_h1cg %>% 
+  as_tibble()  %>% 
+  filter(str_count(condition_comparison, "excluded") != 2) %>% 
+  filter(str_count(condition_comparison, "GroenLinks") == 2) %>% 
+  bind_rows(contrasts_nobreak_h1cg %>% 
+  as_tibble()  %>% 
+  filter(str_count(condition_comparison, "excluded") != 2) %>% 
+  filter(str_count(condition_comparison, "VVD") == 2))%>% 
+  bind_rows(contrasts_nobreak_h1cg %>% 
+  as_tibble()  %>% 
+  filter(str_count(condition_comparison, "excluded") != 2) %>% 
+  filter(str_count(condition_comparison, "PvdA") == 2)) %>% 
+  bind_rows(
+    contrasts_nobreak_h1cg %>% 
+  as_tibble()  %>% 
+  filter(str_detect(condition_comparison, "VVD")) %>% 
+  filter(str_detect(condition_comparison, "Economy")) %>% 
+  filter(!str_detect(condition_comparison, "excluded")) %>% 
+  filter(str_count(condition_comparison, "VVD") != 2) 
+  ) %>% 
+  # filter(str_count(condition_comparison, "VVD") != 2) %>% 
+  # filter(str_detect(Level1, "Economy excluded") & !str_detect(Level2, "Economy excluded")) %>% 
+  mutate(party = str_extract(Level2, "VVD|GroenLinks|PvdA")) %>% 
+  # in case the comparison is in wrong direction, change around
+  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(condition_comparison, "PvdA"), .x*-1, .x)) %>%
+  # mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_count(condition_comparison, "VVD")==2, .x*-1, .x)) %>%
+  # mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "Low"), .x*-1, .x)) %>%
+  mutate(condition_comparison = str_remove_all(condition_comparison, "VVD|GroenLinks|PvdA")) %>% 
+  mutate(plabel = get_plabs(p)) %>% 
+  mutate(diff_label = paste0(round(Difference, 2), plabel)) %>%
+  # count(condition_comparison)
+  # mutate(condition_comparison = "Reach of audience interested in the Economy (compared to VVD and economy excluded)") %>% 
+  mutate(condition_comparison = ifelse(
+    !str_detect(condition_comparison, "excluded"),
+    "Cost of audience interested in the Economy (compared to VVD)",
+    "Cost of audience interested in the Economy (compared to economy excluded)"
+    )) -> ww
+  
+
+ww %>% 
+    ggplot(aes("", Difference, color = party)) + 
+    geom_point(position = position_dodge(width = 0.9)) +
+    geom_errorbar(aes(ymin = CI_low, ymax = CI_high), width = 0, position = position_dodge(width = 0.9)) +
+    geom_text(aes(label = diff_label, y = Difference , x = c(0.81, 1.4, 1.08, 0.9, 1.30)), position = position_dodge(width = 0.9), show.legend = F) +
+    coord_flip() +
+    geom_hline(yintercept = 0, linetype = "dashed") +
+  labs(y = "Estimated price differences of reaching 1k users in Euro",
+         x = "Targeting Comparisons") +
+    theme_minimal() +
+    scale_color_parties() +
+    # facet_grid(condition_comparison ~ ., scales= "free_y" ) +
+    facet_wrap(~condition_comparison, ncol = 1, scales= "free_y" ) +
+    theme(legend.position = "bottom",
+          strip.text.y = element_blank(), 
+          strip.background = element_rect(fill = "lightgrey")) 
+
+
+
+```
+]
+
+
+
+
+
+---
+
+
+class: white
+
+### Audience interested in the Economy: reach
+
+.pull-left[
+
+```{r}
+overview %>% filter(str_detect(targeting, "Economy"))  %>% 
+  mutate(party = fct_relevel(party, c("PvdA", "GroenLinks", "VVD"))) %>% 
+  ggplot(aes(party, reach, color = targeting)) +
+  geom_boxplot() +
+  # coord_flip() +
+  theme_minimal() +
+  ggthemes::scale_color_colorblind() +
+  theme(legend.position = "top")
+```
+
+
+]
+
+--
+
+.pull-right[
+```{r, results='asis'}
+mod_nobreak_h1cg <- lm(reach ~ targeting * party + engagement, data = overview %>% filter(str_detect(targeting, "Economy")))
+# lm.beta::lm.beta(mod)
+
+
+# texreg::screenreg(mod_nobreak_h1cg)
+```
+
+
+```{r}
+contrasts_nobreak_h1cg <- estimate_contrasts(mod_nobreak_h1cg, contrast = c("targeting", "party"),
+                                at = c("targeting", "party")) %>% 
+  as.data.frame()  %>%  
+  mutate(Contrast = paste(Level1, "-", Level2)) %>%  
+  mutate(condition_comparison = fct_reorder(Contrast, Difference)) 
+
+contrasts_nobreak_h1cg %>% 
+  as_tibble()  %>% 
+  filter(str_count(condition_comparison, "excluded") != 2) %>% 
+  filter(str_count(condition_comparison, "GroenLinks") == 2) %>% 
+  bind_rows(contrasts_nobreak_h1cg %>% 
+  as_tibble()  %>% 
+  filter(str_count(condition_comparison, "excluded") != 2) %>% 
+  filter(str_count(condition_comparison, "VVD") == 2))%>% 
+  bind_rows(contrasts_nobreak_h1cg %>% 
+  as_tibble()  %>% 
+  filter(str_count(condition_comparison, "excluded") != 2) %>% 
+  filter(str_count(condition_comparison, "PvdA") == 2)) %>% 
+  bind_rows(
+    contrasts_nobreak_h1cg %>% 
+  as_tibble()  %>% 
+  filter(str_detect(condition_comparison, "VVD")) %>% 
+  filter(str_detect(condition_comparison, "Economy")) %>% 
+  filter(!str_detect(condition_comparison, "excluded")) %>% 
+  filter(str_count(condition_comparison, "VVD") != 2) 
+  ) %>% 
+  # filter(str_count(condition_comparison, "VVD") != 2) %>% 
+  # filter(str_detect(Level1, "Economy excluded") & !str_detect(Level2, "Economy excluded")) %>% 
+  mutate(party = str_extract(Level2, "VVD|GroenLinks|PvdA")) %>% 
+  # in case the comparison is in wrong direction, change around
+  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(condition_comparison, "PvdA"), .x*-1, .x)) %>%
+  # mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_count(condition_comparison, "VVD")==2, .x*-1, .x)) %>%
+  # mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "Low"), .x*-1, .x)) %>%
+  mutate(condition_comparison = str_remove_all(condition_comparison, "VVD|GroenLinks|PvdA")) %>% 
+  mutate(plabel = get_plabs(p)) %>% 
+  mutate(diff_label = paste0(round(Difference, 2), plabel)) %>%
+  # count(condition_comparison)
+  # mutate(condition_comparison = "Reach of audience interested in the Economy (compared to VVD and economy excluded)") %>% 
+  mutate(condition_comparison = ifelse(
+    !str_detect(condition_comparison, "excluded"),
+    "Reach of audience interested in the Economy (compared to VVD)",
+    "Reach of audience interested in the Economy (compared to economy excluded)"
+    )) -> ww
+  
+
+ww %>% 
+    ggplot(aes("", Difference, color = party)) + 
+    geom_point(position = position_dodge(width = 0.9)) +
+    geom_errorbar(aes(ymin = CI_low, ymax = CI_high), width = 0, position = position_dodge(width = 0.9)) +
+    geom_text(aes(label = diff_label, y = Difference , x = c(0.81, 1.4, 1.08, 0.9, 1.30)), position = position_dodge(width = 0.9), show.legend = F) +
+    coord_flip() +
+    geom_hline(yintercept = 0, linetype = "dashed") +
+    labs(y = "Estimated reach differences",
+         x = "Targeting Comparisons") +
+    theme_minimal() +
+    scale_color_parties() +
+    # facet_grid(condition_comparison ~ ., scales= "free_y" ) +
+    facet_wrap(~condition_comparison, ncol = 1, scales= "free_y" ) +
+    theme(legend.position = "bottom",
+          strip.text.y = element_blank(), 
+          strip.background = element_rect(fill = "lightgrey")) 
+
+```
+]
+
+---
+
+class: middle, center
+
+### Audience interested in the economy
+
+H1e: Cheaper to reach for VVD: `not confirmed`
+
+H2e: Ads by VVD reach more people: `not confirmed`
+
+
+---
+
+class: white
+
+### Targeting Criteria and Relevance Coding
+
+
+<img src="img/relevance_coding.png" width="90%">
+
+
+---
+
+class: white
+
+### Relevance Coding Distribution
+
+```{r}
+overview <- readRDS("data/overview.rds")
+
+overview  %>% 
+  filter(targeting != "No Targeting") %>% 
+  distinct(party, targeting, .keep_all = T) %>% 
+  count(relevance) %>% 
+  ggplot(aes(relevance, n)) +
+  geom_col() +
+  ggtitle("Distribution of Relevance") +
+  theme_minimal() +
+  labs(y = "N", x = "Relevance")
+
+```
+
+
+
+
+---
+
+class: white
+
+### Hypothesis H1 and H2
+
+--
+
+.pull-left[
+
+> H1: The more relevant an ad the cheaper the cost
+
+```{r, eval = F}
+
+overview %>%
+  filter(targeting != "No Targeting") %>%
+  group_by(party) %>%
+  # mutate(cost_per_1_000_people_reached = scale(cost_per_1_000_people_reached)) %>% 
+  ggplot(aes(relevance, cost_per_1_000_people_reached, color = party)) +
+  geom_jitter() +
+  geom_smooth(method = "lm") +
+  ggpubr::stat_cor(label.x = 1, show.legend = F) +
+  theme_minimal() +
+  scale_color_parties()
+  # group_by(party) %>% 
+  mutate(relevance = as.character(relevance)) %>% 
+  mutate(relevance_content = as.character(relevance_content)) %>% 
+  mutate(relevance_party = as.character(relevance_party)) %>% 
+  # mutate(cost_per_1_000_people_reached = scale(cost_per_1_000_people_reached)) %>%
+  ggplot(aes("", cost_per_1_000_people_reached)) +
+  geom_boxplot() +
+  EnvStats::stat_mean_sd_text(digits = 2) +
+  facet_grid(relevance_party~relevance_content)
+  # geom_jitter() +
+  # geom_smooth(method = "lm") +
+  ggpubr::stat_compare_means()
+
+# mo <- lm(cost_per_result ~ relevance, data = overview %>% filter(targeting != "No Targeting"))
+
+# library(parameters)
+# mp <- model_parameters(
+#   mo,
+#   vcov = "vcovCR",
+#   vcov_args = list(type = "CR1", cluster = overview %>% filter(targeting != "No Targeting") %>% .$party)
+# )
+
+
 # 
 # mo <- lm(cost_per_result ~ party + targeting + relevance, data = overview %>% filter(targeting != "No Targeting")) 
 # 
@@ -1052,6 +2051,23 @@ stargazer::stargazer(lm(cost_per_result ~ party + targeting, data = overview %>%
                 lm(cost_per_result ~ party + targeting + relevance, data = overview %>% filter(targeting != "No Targeting")),
                 type = "html")
 ```
+
+
+```{r}
+overview %>%
+  filter(targeting != "No Targeting") %>%
+  group_by(party) %>%
+  # mutate(cost_per_1_000_people_reached = scale(cost_per_1_000_people_reached)) %>% 
+  ggplot(aes(relevance, cost_per_1_000_people_reached, color = party)) +
+  geom_jitter() +
+  geom_smooth(method = "lm") +
+  ggpubr::stat_cor(label.x = 1, show.legend = F) +
+  theme_minimal() +
+  scale_color_parties() +
+  theme(legend.position = "bottom")
+```
+
+
 ]
 
 
@@ -1065,361 +2081,510 @@ stargazer::stargazer(lm(cost_per_result ~ party + targeting, data = overview %>%
 # sjPlot::plot_model(mod, show.p = T, show.values = T, type = "std")# +
 ```
 
+--
+
 .pull-right[
 
-> H2: The more relevant an audience is for an ad, the more are ads delivered to that audience.
+> H2: The more are ads delivered
 
 
-```{r, results='asis'}
-mod_nobreak_h2 <- lm(share ~ relevance + engagement, data = share_dat %>% 
-  filter(targeting != "No Targeting"))
-# lm.beta::lm.beta(mod)
-
-# texreg::htmlreg(mod_nobreak_h2)
-# texreg::screenreg(mod_nobreak_h2)
-
-
-
-# sjPlot::plot_model(mod_nobreak_h2, show.p = T, show.values = T)
-
-# share_dat %>%
-#   filter(targeting != "No Targeting") %>%
-#   ggplot(aes(relevance, share, color = party)) +
-#   geom_jitter() +
-#   geom_smooth(method = "lm")
-# 
-# 
-# share_dat %>% 
-#   filter(targeting != "No Targeting") %>% 
-#   ggplot(aes(party, share)) +
-#   geom_boxplot()
-#   geom_point()
-
-stargazer::stargazer(lm(share ~ party + targeting, data = share_dat %>% filter(targeting != "No Targeting")),
-                # lm(share ~ targeting + relevance, data = overview %>% filter(targeting != "No Targeting")),
-                # lm(share ~ party + targeting, data = overview %>% filter(targeting != "No Targeting")),
-                lm(share ~ party + targeting + relevance, data = share_dat %>% filter(targeting != "No Targeting")),
-                type = "html")
-
+```{r}
+overview %>%
+  filter(targeting != "No Targeting") %>%
+  group_by(party) %>%
+  # mutate(cost_per_1_000_people_reached = scale(cost_per_1_000_people_reached)) %>% 
+  ggplot(aes(relevance, reach, color = party)) +
+  geom_jitter() +
+  geom_smooth(method = "lm") +
+  ggpubr::stat_cor(label.x = 1, show.legend = F) +
+  theme_minimal() +
+  scale_color_parties() +
+  theme(legend.position = "bottom")
 ```
+
+<!-- # ```{r, results='asis'} -->
+<!-- # mod_nobreak_h2 <- lm(reach ~ relevance + engagement, data = overview %>%  -->
+<!-- #   filter(targeting != "No Targeting")) -->
+<!-- # # lm.beta::lm.beta(mod) -->
+<!-- #  -->
+<!-- # # texreg::htmlreg(mod_nobreak_h2) -->
+<!-- # # texreg::screenreg(mod_nobreak_h2) -->
+<!-- #  -->
+<!-- #  -->
+<!-- #  -->
+<!-- # sjPlot::plot_model(mod_nobreak_h2, show.p = T, show.values = T) -->
+<!-- #  -->
+<!-- # # share_dat %>% -->
+<!-- # #   filter(targeting != "No Targeting") %>% -->
+<!-- # #   ggplot(aes(relevance, share, color = party)) + -->
+<!-- # #   geom_jitter() + -->
+<!-- # #   geom_smooth(method = "lm") -->
+<!-- # #  -->
+<!-- # #  -->
+<!-- # # share_dat %>%  -->
+<!-- # #   filter(targeting != "No Targeting") %>%  -->
+<!-- # #   ggplot(aes(party, share)) + -->
+<!-- # #   geom_boxplot() -->
+<!-- # #   geom_point() -->
+<!-- #  -->
+<!-- # # stargazer::stargazer(lm(share ~ party + targeting, data = share_dat %>% filter(targeting != "No Targeting")), -->
+<!-- # #                 # lm(share ~ targeting + relevance, data = overview %>% filter(targeting != "No Targeting")), -->
+<!-- # #                 # lm(share ~ party + targeting, data = overview %>% filter(targeting != "No Targeting")), -->
+<!-- # #                 lm(share ~ party + targeting + relevance, data = share_dat %>% filter(targeting != "No Targeting")), -->
+<!-- # #                 type = "html") -->
+<!-- #  -->
+<!-- # ``` -->
 ]
+
 
 ---
 
-## H1a,H2a and H1a,H1b
+class: white, middle center
+
+## Skewed delivery 
+
+in terms of gender, age and region
+
+---
+
+class: white
+
+## Measurement
+
+*Example*
+
+ad delivers to 50% women 
+
+-> it would be wrong to think there is no skew 
+
+--
+
+because:
+
++ 60% of audience are women (last 30 days active)
+
+--
+
+so the skew is:
+
++ skew = gender share in delivery - gender share in audience
+
+> 50-60 = -10%
+
+Ad delivered to 10% less women than if we would assume no skew
+
+---
+
+
+class: white
+
+## Gender skew in Facebook audience
+
+--
+
+```{r}
+gender_audience <- readRDS("../algo_ads/data/audience_joined_gender.rds")
+
+gender_audience %>%
+  ungroup() %>%
+  distinct(targeting, .keep_all = T) %>% 
+  filter(gender == "female") %>% 
+  arrange(desc(perc)) %>% 
+  mutate(targeting = fct_reorder(targeting, perc)) %>% 
+  # group_by(targeting, party)
+  ggplot(aes(targeting, perc)) +
+  geom_col() +
+  coord_flip() +
+  theme_minimal() +
+  geom_label(aes(label = round(perc))) +
+  geom_hline(yintercept = 50, linetype = "dashed") +
+  ggtitle("Share of women in target audiences February 1st 2022\n(according to Meta Marketing API)") +
+  labs(y = "Estimated share of women in audience")
+
+```
+
+
+
+---
+
+class: white
+
+## Differences in delivery by gender
+
+--
+
+```{r}
+gender_dat <- readRDS("../algo_ads/data/gender.rds") %>% 
+  filter(gender != "unknown")
+
+# gender_dat
+```
+.pull-left[
+```{r}
+gender_audience %>% 
+  filter(gender != "unknown") %>%
+  filter(targeting == "No Targeting") %>%
+  # drop_na(campaign_name) %>%
+  ggplot(aes(gender, share)) +
+  geom_boxplot() +
+  facet_wrap(~party) +
+  ggpubr::stat_compare_means() +
+  EnvStats::stat_mean_sd_text(digits = 0) +
+  theme_minimal()  +
+  theme(strip.background = element_rect(fill = "lightgrey")) +
+  labs(y = "Share of reached people by gender") +
+  ggtitle("Share of reached people by gender")
+```
+]
+
+--
+
+.pull-right[
+```{r}
+
+
+gender_audience %>% 
+  filter(gender != "unknown") %>%
+  filter(targeting == "No Targeting") %>%
+  # drop_na(campaign_name) %>%
+  ggplot(aes(gender, diff)) +
+  geom_boxplot() +
+  facet_wrap(~party) +
+  ggpubr::stat_compare_means() +
+  EnvStats::stat_mean_sd_text(digits = 0) +
+  theme_minimal()  +
+  theme(strip.background = element_rect(fill = "lightgrey")) +
+  labs(y = "Difference between audience share and delivery share") +
+  ggtitle("Difference between audience share and delivery share") +
+  geom_hline(yintercept = 0, linetype = "dashed")
+```
+]
+
+
+
+---
+
+class: white
+
+## Differences in delivery by age group
+
+--
 
 .pull-left[
-
-
-```{r, results='asis'}
-mod_nobreak_h1ab <- lm(cost_per_result ~ targeting + engagement + party, data = overview)
-# lm.beta::lm.beta(mod)
-
-
-# texreg::screenreg(mod_nobreak_h1ab)
-
-
-```
-
 ```{r}
-library(parameters)
-library(modelbased)
-
-contrasts_nobreak_h1ab <- estimate_contrasts(mod_nobreak_h1ab, contrast = c("targeting"),
-                                at = c("targeting")) %>% 
-  as.data.frame()  %>%  
-  mutate(Contrast = paste(Level1, "-", Level2)) %>%  
-  mutate(condition_comparison = fct_reorder(Contrast, Difference)) 
-
-contrasts_nobreak_h1ab %>% 
-  as_tibble()  %>% 
-  # filter(str_detect(Level1, "Environment excluded") & !str_detect(Level2, "Environment excluded")) %>% 
-  filter(
-    # str_count(condition_comparison, "Environment") == 2 |
-    # str_count(condition_comparison, "Economy") == 2 
-    str_count(condition_comparison, "Politics") == 2 |
-    str_count(condition_comparison, "Education") == 2 
-  ) %>% 
-  # in case the comparison is in wrong direction, change around
-  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "excluded"), .x*-1, .x)) %>%
-  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "Low"), .x*-1, .x)) %>%
-  mutate(plabel = get_plabs(p)) %>% 
-  mutate(diff_label = paste0(round(Difference, 3), plabel)) %>%
-  # mutate(condition_comparison = ifelse(
-  #   condition_comparison == "Entertainment - Politics",
-  #   "Price of politics audience vs.\nentertainment audience",
-  #   "Price of high-education audience vs.\nlow-education audience"
-  #   )) %>% 
-  ggplot(aes("", Difference)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin = CI_low, ymax = CI_high), width = 0) +
-  coord_flip() +
-  geom_text(aes(label = diff_label), nudge_x = 0.1) +
-  geom_hline(yintercept = 0, linetype = "dashed") +
-  labs(y = "Estimated price differences of reaching 1k users in Euro",
-       x = "Condition Comparisons") +
-  theme_minimal() +
-  scale_color_parties() +
-  theme(legend.position = "none")  +
-  # facet_grid(condition_comparison ~ ., scales= "free_y" ) +
-  facet_wrap(~condition_comparison, ncol = 1, scales= "free_y" ) +
-  theme(legend.position = "bottom",
-        strip.text.y = element_blank(), 
-        strip.background = element_rect(fill = "lightgrey")) 
 
 
+age_audience <- readRDS("../algo_ads/data/audience_joined_age.rds")
+
+
+age_audience %>% 
+  filter(age != "13-17") %>% 
+  # filter(gender != "unknown") %>%
+  # filter(targeting == "No Targeting") %>%
+  # drop_na(campaign_name) %>%
+  ggplot(aes(age, share)) +
+  geom_boxplot() +
+  facet_wrap(~party) +
+  # ggpubr::stat_compare_means() +
+  # EnvStats::stat_mean_sd_text(digits = 0) +
+  theme_minimal()  +
+  theme(strip.background = element_rect(fill = "lightgrey")) +
+  labs(y = "Share of reached people by age") +
+  ggtitle("Share of reached people by age") +
+  coord_flip()
 ```
-
-
-
-
-
 ]
+
+--
 
 .pull-right[
-```{r, results='asis'}
-mod_nobreak_h2ab <- lm(share ~ targeting + party + engagement, data = share_dat)
-# lm.beta::lm.beta(mod)
-
-
-# texreg::htmlreg(mod_nobreak_h2ab)
-
-# texreg::screenreg(mod_nobreak_h2ab)
-
-# sjPlot::plot_model(mod_nobreak_h2ab, show.p = T, show.values = T)
-```
-
-
 ```{r}
-contrasts_nobreak_h2ab <- estimate_contrasts(mod_nobreak_h2ab, contrast = c("targeting"),
-                                at = c("targeting")) %>% 
-  as.data.frame()  %>%  
-  mutate(Contrast = paste(Level1, "-", Level2)) %>%  
-  mutate(condition_comparison = fct_reorder(Contrast, Difference)) 
 
-contrasts_nobreak_h2ab %>% 
-  as_tibble()  %>% 
-  # filter(str_detect(Level1, "Environment excluded") & !str_detect(Level2, "Environment excluded")) %>% 
-  filter(
-    # str_count(condition_comparison, "Environment") == 2 |
-    # str_count(condition_comparison, "Economy") == 2 
-    str_count(condition_comparison, "Politics") == 2 |
-    str_count(condition_comparison, "Education") == 2 
-  ) %>% 
-  # in case the comparison is in wrong direction, change around
-  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "excluded"), .x*-1, .x)) %>%
-  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "Low"), .x*-1, .x)) %>%
-  mutate(plabel = get_plabs(p)) %>% 
-  mutate(diff_label = paste0(round(Difference, 2), plabel)) %>%
-  # mutate(condition_comparison = ifelse(
-  #   condition_comparison == "Entertainment - Politics",
-  #   "Price of politics audience vs.\nentertainment audience",
-  #   "Price of high-education audience vs.\nlow-education audience"
-  #   )) %>% 
-  ggplot(aes("", Difference)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin = CI_low, ymax = CI_high), width = 0) +
-  coord_flip() +
-  geom_text(aes(label = diff_label), nudge_x = 0.1) +
+
+age_audience %>%
+  filter(age != "13-17") %>% 
+  filter(age != "unknown") %>%
+  # filter(targeting == "No Targeting") %>%
+  # drop_na(campaign_name) %>%
+  ggplot(aes(age, diff)) +
+  geom_boxplot() +
+  facet_wrap(~party) +
+  # ggpubr::stat_compare_means() +
+  # EnvStats::stat_mean_sd_text(digits = 0) +
+  theme_minimal()  +
+  theme(strip.background = element_rect(fill = "lightgrey")) +
+  labs(y = "Difference between audience share and delivery share") +
+  ggtitle("Difference between audience share and delivery share") +
   geom_hline(yintercept = 0, linetype = "dashed") +
-  labs(y = "Estimated price differences of reaching 1k users in Euro",
-       x = "Condition Comparisons") +
-  theme_minimal() +
-  scale_color_parties() +
-  theme(legend.position = "none")  +
-  # facet_grid(condition_comparison ~ ., scales= "free_y" ) +
-  facet_wrap(~condition_comparison, ncol = 1, scales= "free_y" ) +
-  theme(legend.position = "bottom",
-        strip.text.y = element_blank(), 
-        strip.background = element_rect(fill = "lightgrey")) 
-
-
+  coord_flip()
 ```
-
-
 ]
 
 
 ---
 
-
-## H1(2)c, H1(2)d, H1(2)e
-
-
-.pull-left[
-```{r, results='asis'}
-mod_nobreak_h1cg <- lm(cost_per_result ~ targeting * party + engagement, data = overview)
-# lm.beta::lm.beta(mod)
-
-
-# texreg::screenreg(mod_nobreak_h1cg)
-```
-
-
-
-
-
-```{r}
-contrasts_nobreak_h1cg <- estimate_contrasts(mod_nobreak_h1cg, contrast = c("targeting", "party"),
-                                at = c("targeting", "party")) %>% 
-  as.data.frame()  %>%  
-  mutate(Contrast = paste(Level1, "-", Level2)) %>%  
-  mutate(condition_comparison = fct_reorder(Contrast, Difference)) 
-
-contrasts_nobreak_h1cg %>% 
-  as_tibble()  %>% 
-  # filter(str_detect(Level1, "Environment excluded") & !str_detect(Level2, "Environment excluded")) %>% 
-  filter(
-    str_count(condition_comparison, "PvdA") == 2 |
-    str_count(condition_comparison, "GroenLinks") == 2 |
-    str_count(condition_comparison, "VVD") == 2
-  ) %>% 
-  filter(
-    str_count(condition_comparison, "Environment") == 2 |
-    str_count(condition_comparison, "Economy") == 2 |
-    # str_count(condition_comparison, "Politics") == 2 |
-    str_count(condition_comparison, "Education") == 2
-  ) %>%
-  mutate(party = str_extract(condition_comparison, "VVD|GroenLinks|PvdA")) %>% 
-  mutate(condition_comparison = str_remove_all(condition_comparison, "VVD|GroenLinks|PvdA")) %>% 
-  # in case the comparison is in wrong direction, change around
-  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "excluded"), .x*-1, .x)) %>%
-  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "Low"), .x*-1, .x)) %>%
-  mutate(plabel = get_plabs(p)) %>% 
-  mutate(diff_label = paste0(round(Difference, 2), plabel)) %>%
-  # mutate(condition_comparison = ifelse(
-  #   condition_comparison == "Entertainment - Politics",
-  #   "Price of politics audience vs.\nentertainment audience",
-  #   "Price of high-education audience vs.\nlow-education audience"
-  #   )) %>% 
-  ggplot(aes("", Difference, color = party)) + 
-  geom_point(position = position_dodge(width = 0.9)) +
-  geom_errorbar(aes(ymin = CI_low, ymax = CI_high), width = 0, position = position_dodge(width = 0.9)) +
-  geom_text(aes(label = diff_label, y = Difference + 0.1), position = position_dodge(width = 0.9), show.legend = F) +
-  coord_flip() +
-  geom_hline(yintercept = 0, linetype = "dashed") +
-  labs(y = "Estimated price differences of reaching 1k users in Euro",
-       x = "Condition Comparisons") +
-  theme_minimal() +
-  scale_color_parties() +
-  # facet_grid(condition_comparison ~ ., scales= "free_y" ) +
-  facet_wrap(~condition_comparison, ncol = 1, scales= "free_y" ) +
-  theme(legend.position = "bottom",
-        strip.text.y = element_blank(), 
-        strip.background = element_rect(fill = "lightgrey")) 
-```
-
-
-]
-
-.pull-right[
-
-
-```{r, results='asis'}
-mod_nobreak_h2cg <- lm(share ~ targeting * party + engagement, data = share_dat)
-# lm.beta::lm.beta(mod)
-
-
-```
-
-
-```{r}
-contrasts_nobreak_h2cg <- estimate_contrasts(mod_nobreak_h2cg, contrast = c("targeting", "party"),
-                                at = c("targeting", "party")) %>% 
-  as.data.frame()  %>%  
-  mutate(Contrast = paste(Level1, "-", Level2)) %>%  
-  mutate(condition_comparison = fct_reorder(Contrast, Difference)) 
-
-contrasts_nobreak_h2cg %>% 
-  as_tibble()  %>% 
-  # filter(str_detect(Level1, "Environment excluded") & !str_detect(Level2, "Environment excluded")) %>% 
-  filter(
-    str_count(condition_comparison, "PvdA") == 2 |
-    str_count(condition_comparison, "GroenLinks") == 2 |
-    str_count(condition_comparison, "VVD") == 2
-  ) %>% 
-  filter(
-    str_count(condition_comparison, "Environment") == 2 |
-    str_count(condition_comparison, "Economy") == 2 |
-    # str_count(condition_comparison, "Politics") == 2 |
-    str_count(condition_comparison, "Education") == 2
-  ) %>%
-  mutate(party = str_extract(condition_comparison, "VVD|GroenLinks|PvdA")) %>% 
-  mutate(condition_comparison = str_remove_all(condition_comparison, "VVD|GroenLinks|PvdA")) %>% 
-  # in case the comparison is in wrong direction, change around
-  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "excluded"), .x*-1, .x)) %>%
-  mutate_at(vars(Difference, CI_low, CI_high), ~ifelse(str_detect(Level1, "Low"), .x*-1, .x)) %>%
-  mutate(plabel = get_plabs(p)) %>% 
-  mutate(diff_label = paste0(round(Difference, 2), plabel)) %>%
-  # mutate(condition_comparison = ifelse(
-  #   condition_comparison == "Entertainment - Politics",
-  #   "Price of politics audience vs.\nentertainment audience",
-  #   "Price of high-education audience vs.\nlow-education audience"
-  #   )) %>% 
-  ggplot(aes("", Difference, color = party)) + 
-  geom_point(position = position_dodge(width = 0.9)) +
-  geom_errorbar(aes(ymin = CI_low, ymax = CI_high), width = 0, position = position_dodge(width = 0.9)) +
-  geom_text(aes(label = diff_label, y = Difference + 2.5), position = position_dodge(width = 0.9), show.legend = F) +
-  coord_flip() +
-  geom_hline(yintercept = 0, linetype = "dashed") +
-  labs(y = "Estimated share of delivery differences in percent",
-       x = "Condition Comparisons") +
-  theme_minimal() +
-  scale_color_parties() +
-  # facet_grid(condition_comparison ~ ., scales= "free_y" ) +
-  facet_wrap(~condition_comparison, ncol = 1, scales= "free_y" ) +
-  theme(legend.position = "bottom",
-        strip.text.y = element_blank(), 
-        strip.background = element_rect(fill = "lightgrey")) 
-
-
-```
-
-
-]
-
-
----
-
-
-## Gender differences
-
-
-
-
----
-
-## Age differences
-
-
-
-
----
+class: white
 
 ## Region differences
 
+--
+
+.pull-left[
+```{r}
+
+
+region_audience <- readRDS("../algo_ads/data/audience_joined_region.rds")
+
+
+region_audience %>% 
+  # filter(age != "13-17") %>% 
+  # filter(gender != "unknown") %>%
+  # filter(targeting == "No Targeting") %>%
+  # drop_na(campaign_name) %>%
+  mutate(region = fct_reorder(region, share)) %>% 
+  ggplot(aes(region, share)) +
+  geom_boxplot() +
+  facet_wrap(~party) +
+  # ggpubr::stat_compare_means() +
+  # EnvStats::stat_mean_sd_text(digits = 0) +
+  theme_minimal()  +
+  theme(strip.background = element_rect(fill = "lightgrey")) +
+  labs(y = "Share of reached people by region") +
+  ggtitle("Share of reached people by region") +
+  coord_flip()
+```
+]
+
+--
+
+.pull-right[
+```{r}
+
+
+region_audience %>%
+  filter(age != "13-17") %>% 
+  filter(age != "unknown") %>%
+  mutate(region = fct_reorder(region, diff)) %>% 
+  # filter(targeting == "No Targeting") %>%
+  # drop_na(campaign_name) %>%
+  ggplot(aes(region, diff)) +
+  geom_boxplot() +
+  facet_wrap(~party) +
+  # ggpubr::stat_compare_means() +
+  # EnvStats::stat_mean_sd_text(digits = 0) +
+  theme_minimal()  +
+  theme(strip.background = element_rect(fill = "lightgrey")) +
+  labs(y = "Difference between audience share and delivery share") +
+  ggtitle("Difference between audience share and delivery share") +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  coord_flip()
+```
+]
 
 
 
 ---
 
-## Platform differences
+class: center, middle
+
+## Summary
 
 
+---
+
+### Summary
+
+Our finding do not always align with expectations:
+
++ Overall measurement of ad relevance may need some work
+
+**However:**
+
+We find that Meta ad delivery algorithm prioritizes certain parties and audiences:
+
+--
+
++ Compared to GroenLinks and VVD:
+
+  + PvdA pays less (~-8-10% to reach the same audience)
+  + PvdA reaches more people (~1.1 - 1.3k more per ad)
+  
+--
+  
++ Higher-educated people (vs. lower-educated people) 
+    
+  + cheaper to reach (~-5%)
+  + deliver more (~600 more per ad)
+  
+--
+
++ People interested in environment (vs. not)
+  
+  + more expensive to reach (~10%)
+  + deliver more (~-1.4k less per ad)
+  
+--
+
++ People interested in economy and politics (vs. not)
+  + no difference in delivery and pricing
+  
+  
+  
+
+```{r, eval = F}
+overview %>% 
+  mutate(pair = readr::parse_number(ad_set_name)) %>% 
+  select(party, targeting, reach, pair) %>% 
+  drop_na(targeting) %>% 
+  pivot_wider(names_from = party, values_from = reach) %>% 
+  mutate(perc_vvd = PvdA - VVD,
+         perc_gl = PvdA - GroenLinks) %>% 
+  select(targeting, perc_vvd, perc_gl) %>% 
+  gather(key, value, -targeting) %>% 
+  mutate(value = 1-value) %>% 
+  group_by(key) %>% 
+  summarise(value = mean(value))
+
+
+overview %>% 
+  filter(str_detect(targeting, "Education")) %>% 
+  # select()
+  mutate(pair = readr::parse_number(ad_set_name)) %>%
+  select(party, targeting, cost_per_1_000_people_reached, pair) %>%
+  drop_na(targeting) %>%
+  pivot_wider(names_from = targeting, values_from = cost_per_1_000_people_reached) %>%
+  mutate(perc = `Higher Education` / `Lower Education`) %>% 
+  select(party, perc) %>%
+  gather(key, value, -party) %>%
+  mutate(value = 1-value) %>%
+  group_by(key) %>%
+  summarise(value = mean(value))
+
+
+overview %>% 
+  filter(str_detect(targeting, "Environment")) %>% 
+  # select()
+  mutate(pair = readr::parse_number(ad_set_name)) %>%
+  select(party, targeting, cost_per_1_000_people_reached, pair) %>%
+  drop_na(targeting) %>%
+  pivot_wider(names_from = targeting, values_from = cost_per_1_000_people_reached) %>%
+  mutate(perc = `Environment` / `Environment excluded`) %>% 
+  select(party, perc) %>%
+  gather(key, value, -party) %>%
+  mutate(value = 1-value) %>%
+  group_by(key) %>%
+  summarise(value = mean(value))
+```
 
 
 ---
 
-## Weird stuff?
 
+### Summary
 
+**Age, gender and region**
+
+Even after controlling for Facebook user breakdown:
+
++ Men receive more ads than women 
+
++ 18-24 year olds receive less ads 
+
++ Certain Dutch provinces receive less ads than others 
 
 ---
+
+
+
+### Implications
+
+
++ Facebook (dis-)advantage certain parties
+
+  + Unequal playing field
+
+--
+
++ Some groups of people and regions are **systematically** less likely to receive political advertisements and more expensive to reach
+
+  + isolating these groups from receiving election-related information
+  
+  + may deepen political inequalities
+  
+
+--
+
++ Little to no transparency by Facebook about these systematic biases
+
+  + what tools can researchers and platforms use/provide to counter-act this?
+  
+---
+
+### Political Microtargeting and Ad Delivery Algorithms
+
+
++ Severely limiting or banning microtargeting is *inadequate*
+
+It would:
+
+1. not end “targeting”
+
+2. give more “autonomy” to the platform and its ad delivery algorithm
+
+3. would make it more difficult to create transparency
+
+<br>
+
+→ *regulations that only focus on the advertiser “capabilities” and not also the ad delivery algorithm falls short*
+
+---
+
+## Open analyses
+
++ Age, gender and region breakdown by different targeting groups:
+
+  + e.g.: higher-educated older men
+  
+  
++ Breakdown of statistics by platform: Facebook vs. Instagram
+
++ Analysis over time (costs and delivery each day)
+
+---
+
 
 ## Open questions
 
+<br>
+<br>
+<br>
+
+<center>
+
+<img src="https://memecrunch.com/meme/CFEV6/any-questions/image.gif?w=400&c=1">
+
+
+<!-- ![]() -->
+
+</center>
+
+
 ---
 
+class: center, middle
+
+# Let's discuss
+
+<img src="https://i.gifer.com/3Eic.gif">
+
+
+---
+
+class: center, middle
+
+## Appendix
+
+---
 
 class: center, middle
 
@@ -1532,30 +2697,7 @@ class: white
 ---
 
 
-<br>
-<br>
-<br>
 
-<center>
-
-<img src="https://memecrunch.com/meme/CFEV6/any-questions/image.gif?w=400&c=1">
-
-
-<!-- ![]() -->
-
-</center>
-
-
----
-
-class: center, middle
-
-# Let's discuss
-
-<img src="https://i.gifer.com/3Eic.gif">
-
-
----
 
 class: white
 
@@ -1710,37 +2852,8 @@ knitr::include_graphics("img/older.png")
 <!-- ![](img/older.png) -->
   
 
----
 
 
-
-
-### Why study black box of the Facebook algorithm
-
-
-+ Facebook may (dis-)advantage certain parties
-
-  + Equal-time rule?
-
---
-
-+ Parties may pay more money to persuade potential voters
-
-  + It might be more costly to reach people who are undecided
-
---
-
-+ Political campaigns may not reach their intended audiences 
-
-  + only the people that *already agree with the message*
-  
-  + certain groups might be excluded entirely
-  
-  + potentially exasperates the fragmentation of the political landscape
-
-
-
----
 
 ---
 
